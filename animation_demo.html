@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="apple-touch-icon" type="image/png" href="https://static.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png" />
+
+<meta name="apple-mobile-web-app-title" content="CodePen">
+
+<link rel="shortcut icon" type="image/x-icon" href="https://static.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico" />
+
+<link rel="mask-icon" type="" href="https://static.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111" />
+<title>CodePen - ReboundGen</title>
+<link rel='stylesheet' href='https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/reboundgen.css'>
+<style>
+article.type-system-sans {
+  text-align: left;
+}
+
+article.type-system-sans .type {
+  border-bottom: 1px solid;
+  display: inline-block;
+  font-family: "Titillium Web",sans-serif;
+  font-size: .7em;
+  font-weight: 900;
+  letter-spacing: 1px;
+  margin-bottom: 2em;
+  padding: .1em 0;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+article.type-system-sans h1 {
+  font-family: "Titillium Web",sans-serif;
+  font-size: 2em;
+  font-weight: 600;
+  margin-bottom: .6em;
+}
+
+article.type-system-sans .hero h1 {
+  font-family: "Titillium Web",sans-serif;
+  font-size: 4em;
+  font-weight: 600;
+  margin-bottom: .4em;
+  margin-top: .4em;
+}
+
+article.type-system-sans h2 {
+  font-family: "PT Sans",sans-serif;
+  font-size: 1.2em;
+  font-weight: 400;
+  line-height: 1.4em;
+  margin-bottom: 1.2em;
+}
+
+article.type-system-sans code {
+  white-space: nowrap;
+  font-family: monaco;
+  background: #F7F7F7;
+  border: 1px solid #E0E0E0;
+  border-radius: 7.5px;
+  padding: .1em .4em;
+  font-size: .65em;
+  font-style: normal;
+}
+
+article.type-system-sans h3 {
+  font-family: "Titillium Web",sans-serif;
+  font-size: 1em;
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 1.4em;
+  margin-bottom: .5em;
+}
+
+article.type-system-sans p.date {
+  color: rgba(0, 0, 0, 0.4);
+  font-family: "PT Sans",sans-serif;
+  font-size: .8em;
+  margin-bottom: .5em;
+}
+
+article.type-system-sans p {
+  font-family: "PT Sans",sans-serif;
+  font-weight: 300;
+  letter-spacing: 1;
+  margin-bottom: 1.5em;
+}
+
+article.type-system-sans p span {
+  font-family: "PT Sans",sans-serif;
+  font-weight: 600;
+  font-size: .8em;
+  text-transform: uppercase;
+}
+
+article.type-system-sans hr {
+  width: 3em;
+}
+
+article.type-system-sans a.read-more {
+  display: inline-block;
+  font-family: "PT Sans",sans-serif;
+  font-weight: 700;
+  font-size: .8em;
+  text-transform: uppercase;
+  margin-left: .2em;
+  position: relative;
+}
+
+article.type-system-sans a.read-more span {
+  position: absolute;
+  font-size: 1.7em;
+  top: -2px;
+  right: -10px;
+}
+
+article.type-system-sans p.author {
+  font-family: "PT Sans",sans-serif;
+  font-style: italic;
+}
+
+.staggered :nth-child(2) {
+  animation-delay: .5s;
+  -webkit-animation-delay: .5s;
+  -ms-animation-delay: .5s;
+  -o-animation-delay: .5s;
+  -moz-animation-delay: .5s;
+}
+
+.staggered :nth-child(3) {
+  animation-delay: 1.5s;
+  -webkit-animation-delay: 1.5s;
+  -ms-animation-delay: 1.5s;
+  -o-animation-delay: 1.5s;
+  -moz-animation-delay: 1.5s;
+}
+
+.staggered :nth-child(4) {
+  animation-delay: 2s;
+  -webkit-animation-delay: 2s;
+  -ms-animation-delay: 2s;
+  -o-animation-delay: 2s;
+  -moz-animation-delay: 2s;
+}
+
+.staggered :nth-child(5) {
+  animation-delay: 2.5s;
+  -webkit-animation-delay: 2.5s;
+  -ms-animation-delay: 2.5s;
+  -o-animation-delay: 2.5s;
+  -moz-animation-delay: 2.5s;
+}
+
+.staggered :nth-child(6) {
+  animation-delay: 3s;
+  -webkit-animation-delay: 3s;
+  -ms-animation-delay: 3s;
+  -o-animation-delay: 3s;
+  -moz-animation-delay: 3s;
+}
+
+.staggered :nth-child(7) {
+  animation-delay: 3.5s;
+  -webkit-animation-delay: 3.5s;
+  -ms-animation-delay: 3.5s;
+  -o-animation-delay: 3.5s;
+  -moz-animation-delay: 3.5s;
+}
+
+div.hero-container {
+  background-color: #eee;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+
+div.hero {
+  min-width: 320px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+div.animations-container {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 860px;
+}
+
+div.instructions-container {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+  max-width: 860px;
+}
+
+div.example-container {
+  position: relative;
+  float: left;
+  width: 31.5%;
+  -webkit-perspective: 100px;
+  -ms-perspective: 100px;
+  -moz-perspective: 100px;
+  -o-perspective: 100px;
+  perspective: 100px;
+  border: 1px solid #ccc;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  padding-bottom: 30px;
+}
+
+div.animation-example {
+  margin-left: auto;
+  width: 60px;
+  height: 50px;
+  margin-right: auto;
+  margin-top: 20px;
+  border-radius: 10px;
+}
+
+div.animations-container div.example-container:nth-child(5n+0) div.animation-example {
+  background-color: #1abc9c;
+}
+
+div.animations-container div.example-container:nth-child(5n+1) div.animation-example {
+  background-color: #2980b9;
+}
+
+div.animations-container div.example-container:nth-child(5n+2) div.animation-example {
+  background-color: #e74c3c;
+}
+
+div.animations-container div.example-container:nth-child(5n+3) div.animation-example {
+  background-color: #e67e22;
+}
+
+div.animations-container div.example-container:nth-child(5n+4) div.animation-example {
+  background-color: #27ae60;
+}
+
+div.animations-container div.example-container:nth-child(5n+5) div.animation-example {
+  background-color: #8e44ad;
+}
+</style>
+<script>
+  window.console = window.console || function(t) {};
+</script>
+<script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+</script>
+</head>
+<body translate="no">
+<div class="animations-container">
+<div class="example-container">
+<code>.bounceInRight</code>
+<div class="animation-example" data-anim="bounceInRight"></div>
+</div>
+<div class="example-container">
+<code>.bounceInLeft</code>
+<div class="animation-example" data-anim="bounceInLeft"></div>
+</div>
+<div class="example-container">
+<code>.bounceInDown</code>
+<div class="animation-example" data-anim="bounceInDown"></div>
+</div>
+<div class="example-container">
+<code>.bounceInDrop</code>
+<div class="animation-example" data-anim="bounceInDrop"></div>
+</div>
+<div class="example-container">
+<code>.glideInRight</code>
+<div class="animation-example" data-anim="glideInRight"></div>
+</div>
+<div class="example-container">
+<code>.glideInLeft</code>
+<div class="animation-example" data-anim="glideInLeft"></div>
+</div>
+<div class="example-container">
+<code>.glideInUp</code>
+<div class="animation-example" data-anim="glideInUp"></div>
+</div>
+<div class="example-container">
+<code>.glideInDown</code>
+<div class="animation-example" data-anim="glideInDown"></div>
+</div>
+<div class="example-container">
+<code>.bounceInScale</code>
+<div class="animation-example" data-anim="bounceInScale"></div>
+</div>
+<div class="example-container">
+<code>.bounceInScale2</code>
+<div class="animation-example" data-anim="bounceInScale2"></div>
+</div>
+<div class="example-container">
+<code>.springScaleOut</code>
+<div class="animation-example" data-anim="springScaleOut"></div>
+</div>
+<div class="example-container">
+<code>.hoverJiggle</code>
+<div class="animation-example" data-anim="hoverJiggle"></div>
+</div>
+<div class="example-container">
+<code>.hoverJiggle2</code>
+<div class="animation-example" data-anim="hoverJiggle2"></div>
+</div>
+<div class="example-container">
+<code>.twirlIn</code>
+<div class="animation-example" data-anim="twirlIn"></div>
+</div>
+<div class="example-container">
+<code>.rubberband</code>
+<div class="animation-example" data-anim="rubberband"></div>
+</div>
+<div class="example-container">
+<code>.jellyfall</code>
+<div class="animation-example" data-anim="jellyfall"></div>
+</div>
+<div class="example-container">
+<code>.jellyfall2</code>
+<div class="animation-example" data-anim="jellyfall2"></div>
+</div>
+<div class="example-container">
+<code>.slideInRight</code>
+<div class="animation-example" data-anim="slideInRight"></div>
+</div>
+<div class="example-container">
+<code>.slideInLeft</code>
+<div class="animation-example" data-anim="slideInLeft"></div>
+</div>
+<div class="example-container">
+<code>.flipInLeft</code>
+<div class="animation-example" data-anim="flipInLeft"></div>
+</div>
+<div class="example-container">
+<code>.flipInRight</code>
+<div class="animation-example" data-anim="flipInRight"></div>
+</div>
+<div class="example-container">
+<code>.flipInBottom</code>
+<div class="animation-example" data-anim="flipInBottom"></div>
+</div>
+<div class="example-container">
+<code>.flipInTop</code>
+<div class="animation-example" data-anim="flipInTop"></div>
+</div>
+<div class="example-container">
+<code>.kitchenSink</code>
+<div class="animation-example" data-anim="kitchenSink"></div>
+</div>
+<div class="example-container">
+<code>.flyInBottom</code>
+<div class="animation-example" data-anim="flyInBottom"></div>
+</div>
+<div class="example-container">
+<code>.flyInLeft</code>
+<div class="animation-example" data-anim="flyInLeft"></div>
+</div>
+<div class="example-container">
+<code>.flyInRight</code>
+<div class="animation-example" data-anim="flyInRight"></div>
+</div>
+</div>
+
+<script src="https://static.codepen.io/assets/common/stopExecutionOnTimeout-30d18ea41045577cdb11c797602d08e0b9c2fa407c8b81058b1c422053ad8041.js"></script>
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+
+<script id="rendered-js">
+$(".animation-example").on("mouseover", function () {
+  var anim = $(this).attr("data-anim");
+  $(this).removeClass(anim);
+  $(this).addClass(anim);
+
+  $(this).one(
+  "webkitAnimationEnd oanimationend MSAnimationEnd animationend",
+  function (e) {
+    // code to execute after transition ends
+    $(this).removeClass(anim); 
+  });
+
+});
+//# sourceURL=pen.js
+    </script>
+</body>
+</html>
