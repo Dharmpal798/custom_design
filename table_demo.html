@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Custom Table</title> 
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">   
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/custom.css">
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <style>    
+
+    body {  
+        /*height: 2000px;*/ 
+        padding-top: 50px;
+    }
+
+    table::-webkit-scrollbar {
+      width: 1px !important;
+    }
+     
+    table::-webkit-scrollbar-track {
+      box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    }
+     
+    table::-webkit-scrollbar-thumb {
+      background-color: darkgrey;
+      outline: 1px solid slategrey;
+    }
+      
+    tbody {     
+        display:block;
+        height:200px;
+        overflow:auto;
+    }
+
+    thead, tbody tr {               
+        display:table;
+        width:100%;
+        table-layout:fixed;    
+    }
+
+    thead {           
+
+    }
+
+
+  </style> 
+  
+</head>
+
+<body>
+
+<div class="first_div" style="display: none;">                    
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark"> 
+      <div class="container">
+      <a class="navbar-brand" href="#">Navbar</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Our Team</a>
+          </li>    
+          <li>
+              <a class="nav-link" href="#">Portfolio</a>
+          </li>  
+          <li>
+              <a class="nav-link" href="#">Contact Us</a>
+          </li>   
+        </ul>
+      </div>  
+      </div>
+    </nav>
+</div> 
+
+
+<div class="secod_table">
+    <div class="container"> 
+        <div class="row"> 
+            <div class="col-lg-12">      
+                <div class="">
+            <h3>Table A</h3>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <td>Name</td>   
+                            <td>phone</td>
+                            <td>Name</td>
+                            <td>phone</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>AAAA</td>
+                            <td>323232</td>
+                            <td>BBBBB</td>
+                            <td>323232</td>
+                        </tr>
+                        <tr>
+                            <td>CCCCC</td>
+                            <td>3435656</td>
+                            <td>BBBBB</td>
+                            <td>323232</td>
+                        </tr>
+                        <tr>
+                            <td>BBBBB</td>
+                            <td>323232</td>
+                            <td>BBBBB</td>
+                            <td>323232</td>
+                        </tr>
+                        <tr>
+                            <td>CCCCC</td>
+                            <td>3435656</td>
+                            <td>BBBBB</td>
+                            <td>323232</td>
+                        </tr>
+                        <tr>
+                            <td>CCCCC</td>
+                            <td>3435656</td>
+                            <td>BBBBB</td>
+                            <td>323232</td>
+                        </tr>
+                        <tr>
+                            <td>CCCCC</td>
+                            <td>3435656</td>
+                            <td>BBBBB</td>
+                            <td>323232</td>
+                        </tr>
+                        <tr>
+                            <td>BBBBB</td>
+                            <td>323232</td>
+                            <td>BBBBB</td>
+                            <td>323232</td>
+                        </tr>
+                        <tr>
+                            <td>CCCCC</td>
+                            <td>3435656</td>
+                            <td>BBBBB</td>
+                            <td>323232</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <hr>
+            </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+<script src="js/jquery.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+</body>
+</html>

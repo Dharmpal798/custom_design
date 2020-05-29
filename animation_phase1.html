@@ -1,0 +1,2049 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Animation</title>    
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">   
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/custom.css">
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> 
+
+  <style>
+    
+    .first_design { 
+
+    }
+
+    body, html {
+	 height: 100%;
+	 width: 100%;
+	 overflow: hidden;
+}
+ body {
+	 display: flex;
+	 justify-content: center;
+	 align-items: center;
+	 height: 100%;
+	 width: 100% !important;
+	 overflow: hidden;
+	 background-color: #264050;
+	 font-family: "arial";
+	 flex-direction: column;
+	 perspective: 300px;
+	 margin: auto;
+}
+ .man {
+	 display: flex;
+	 position: relative;
+	 flex-direction: column;
+	 height: 310px;
+	 z-index: 3;
+	 animation: bounce 1.5s ease-in-out forwards infinite;
+}
+ .man:after {
+	 content: "";
+	 display: block;
+	 width: 100px;
+	 height: 100px;
+	 background: rgba(0, 0, 0, 0.3);
+	 position: absolute;
+	 transform: scale(1, 0.1);
+	 border-radius: 50px;
+	 bottom: -50px;
+	 left: -20px;
+	 animation: shadow 1.5s ease-in-out forwards infinite;
+}
+ .head {
+	 width: 50px;
+	 height: 60px;
+	 background: #e2ddc5;
+	 border-radius: 25px 30px 15px 30px;
+	 position: relative;
+	 animation: bop_head 1.5s ease-in-out backwards infinite;
+}
+ .head:after {
+	 content: "";
+	 display: block;
+	 height: 32px;
+	 width: 25px;
+	 z-index: 2;
+	 background: #e2ddc5;
+	 position: absolute;
+	 bottom: -10px;
+	 left: 2px;
+	 transform: rotateZ(20deg);
+}
+ .head__eye {
+	 background: #000;
+	 height: 5px;
+	 width: 3px;
+	 position: absolute;
+	 top: 20px;
+	 right: 7px;
+	 border-radius: 3px;
+}
+ .head__eye:before {
+	 content: "";
+	 display: block;
+	 width: 8px;
+	 height: 3px;
+	 background: rgba(0, 0, 0, 0.2);
+}
+ .head__eye:after {
+	 content: "";
+	 height: 5px;
+	 width: 12px;
+	 border-radius: 10px 5px 0 0;
+	 background: #15141c;
+	 display: block;
+	 margin-top: -8px;
+	 margin-left: -2px;
+}
+ .head__hair {
+	 width: 30px;
+	 height: 25px;
+	 background: #15141c;
+	 border-radius: 10px 20px 5px 0;
+}
+ .head__hair:after {
+	 content: "";
+	 display: block;
+	 width: 30px;
+	 height: 10px;
+	 background: #15141c;
+	 position: absolute;
+	 left: 12px;
+	 top: -2px;
+	 border-radius: 5px 0 5px 0;
+}
+ .head__ear {
+	 position: relative;
+	 background: #e2ddc5;
+	 height: 15px;
+	 width: 12px;
+	 z-index: 3;
+	 border-radius: 5px 5px 2px 8px;
+	 margin: -3px 0 0 6px;
+	 transform: rotateZ(-5deg);
+	 box-shadow: -3px 2px 5px 0px rgba(0, 0, 0, 0.3);
+}
+ .head__nose {
+	 background: #e2ddc5;
+	 height: 15px;
+	 width: 10px;
+	 position: absolute;
+	 right: -8px;
+	 top: 25px;
+	 border-radius: 0 10px 5px 0;
+}
+ .head__nose:after {
+	 content: "";
+	 display: block;
+	 background: #15141c;
+	 height: 8px;
+	 width: 12px;
+	 position: absolute;
+	 bottom: -7px;
+	 left: -7px;
+	 border-radius: 10px 5px 5px 0;
+}
+ .body {
+	 position: relative;
+	 background: #7b7a82;
+	 height: 90px;
+	 width: 40px;
+	 margin-top: 5px;
+	 z-index: 2;
+	 margin-left: -10px;
+	 border-radius: 45px 70px 20px 20px;
+	 transform: rotateZ(-3deg);
+}
+ .body__belly {
+	 width: 40px;
+	 height: 40px;
+	 background: #7b7a82;
+	 position: absolute;
+	 top: 47px;
+	 border-radius: 40px;
+	 right: -10px;
+	 transform: scale(0.5, 1.25);
+	 animation: bop 1.5s ease-in-out forwards infinite;
+}
+ .arm {
+	 position: absolute;
+	 width: 100px;
+	 height: 100px;
+	 z-index: 6;
+	 top: 80px;
+	 left: -25px;
+}
+ .arm__top {
+	 width: 15px;
+	 height: 40px;
+	 background: #e2ddc5;
+	 position: absolute;
+	 left: 25px;
+	 top: 12px;
+	 border-radius: 3px 3px 6px 6px;
+	 transform: rotate(0);
+	 transform-origin: 50% -5px;
+	 box-shadow: -3px 2px 5px 0px rgba(0, 0, 0, 0.1);
+}
+ .arm__fore {
+	 width: 13px;
+	 height: 50px;
+	 position: absolute;
+	 left: 0px;
+	 top: 30px;
+	 border-radius: 5px;
+	 background: #e2ddc5;
+	 transform: rotateX(-10deg);
+	 transform-origin: 50% 5px;
+	 z-index: 6;
+	 box-shadow: -3px 2px 5px 0px rgba(0, 0, 0, 0.3);
+	 animation: bend_arm 1.5s ease-in-out alternate infinite;
+}
+ .arm__fore:after {
+	 content: "";
+	 display: block;
+	 background: #e2ddc5;
+	 height: 20px;
+	 width: 15px;
+	 border-radius: 10px;
+	 position: absolute;
+	 bottom: -15px;
+	 transform-origin: 50% 5px;
+	 left: -2px;
+	 animation: hand 1.5s ease-in-out alternate infinite;
+}
+ .arm.back {
+	 z-index: -1;
+}
+ .arm.back .arm__top {
+	 animation: swing_back 1.5s ease-in-out alternate infinite;
+}
+ .arm.back .arm__fore {
+	 animation: bend_back 1.5s ease-in-out alternate infinite;
+}
+ .arm.front .arm__top {
+	 animation: swing_arm 1.5s ease-in-out alternate infinite;
+}
+ @keyframes swing_arm {
+	 0%, 100% {
+		 transform: rotate(15deg);
+	}
+	 50% {
+		 transform: rotate(-15deg);
+	}
+}
+ @keyframes swing_back {
+	 0%, 100% {
+		 transform: rotate(-15deg);
+	}
+	 50% {
+		 transform: rotate(15deg);
+	}
+}
+ @keyframes bend_arm {
+	 0%, 100% {
+		 transform: rotate(-10deg);
+	}
+	 50% {
+		 transform: rotate(-20deg);
+	}
+}
+ @keyframes hand {
+	 0%, 100% {
+		 transform: rotate(15deg);
+	}
+	 50% {
+		 transform: rotate(-10deg);
+	}
+}
+ @keyframes bend_back {
+	 0%, 100% {
+		 transform: rotate(-20deg);
+	}
+	 50% {
+		 transform: rotate(-10deg);
+	}
+}
+ .pelvis {
+	 border-top: 5px solid #604d25;
+	 background: #4a4d5b;
+	 width: 43px;
+	 height: 30px;
+	 margin-left: -13px;
+	 border-radius: 4px 4px 20px 20px;
+	 transform: rotateZ(10deg);
+	 z-index: 2;
+	 margin-top: -6px;
+}
+ .leg {
+	 perspective: 1000px;
+}
+ .leg__top {
+	 background: #4a4d5b;
+	 transform-origin: 50% 0px;
+	 animation: leg_top 1.5s ease-in-out alternate infinite;
+	 height: 70px;
+	 width: 25px;
+	 margin-top: -15px;
+	 margin-left: -2px;
+	 z-index: 5;
+	 position: absolute;
+	 border-radius: 0 0 30px 10px;
+}
+ .leg__fore {
+	 background: #4a4d5b;
+	 height: 80px;
+	 width: 20px;
+	 position: absolute;
+	 bottom: -70px;
+	 animation: leg_fore 1.5s ease-in-out forwards infinite;
+	 transform-origin: 50% 0px;
+}
+ .leg__fore:after {
+	 content: "";
+	 display: block;
+	 width: 40px;
+	 height: 12px;
+	 background: #111;
+	 position: absolute;
+	 border-radius: 0 10px 5px 0;
+	 left: 0;
+	 bottom: -10px;
+	 animation: foot_front 1.5s ease-in-out forwards infinite;
+}
+ .leg.back {
+	 opacity: 1;
+	 z-index: -1;
+}
+ .leg.back .leg__top {
+	 background: #383a44;
+	 margin-top: -20px;
+	 animation: leg_top_back 1.5s ease-in-out alternate infinite;
+}
+ .leg.back .leg__fore {
+	 background: #383a44;
+	 animation: leg_fore_back 1.5s ease-in-out forwards infinite;
+}
+ .leg.back .leg__fore:after {
+	 animation: foot_back 1.5s ease-in-out forwards infinite;
+}
+ .road {
+	 position: absolute;
+	 background: #1e1d22;
+	 top: calc(50% + 195px);
+	 height: 50%;
+	 width: 100vw;
+	 z-index: -2;
+	 border-top: 20px solid #121214;
+}
+ .wall {
+	 height: calc(50% + 120px);
+	 width: 200vw;
+	 position: absolute;
+	 top: 0;
+	 left: 0;
+	 z-index: -1;
+	 opacity: 0.1;
+	 background: url(data:image/png;
+	base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9aaaaj0leqvqou2nkwat/GRgYGNGFMQSwaAQLjSrEFTLgcAUFD9YARtcFAONsAwud/tCtAAAAAElFTkSuQmCC) repeat;
+	 animation: world_move 6.25s linear forwards infinite;
+}
+ .crack {
+	 position: absolute;
+	 top: 50%;
+	 left: 60%;
+	 width: 50px;
+	 display: none;
+	 flex-wrap: wrap;
+}
+ .crack .brick {
+	 width: 30px;
+	 height: 15px;
+	 border: 1px solid black;
+	 opacity: 0.2;
+}
+ .crack .brick:nth-child(2), .crack .brick:nth-child(3) {
+	 width: 15px;
+}
+ .lighting .shade {
+	 position: absolute;
+	 top: 0;
+	 left: 0;
+	 z-index: 10;
+	 opacity: 0.6;
+	 background: linear-gradient(135deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
+	 height: 100vh;
+	 width: 50%;
+}
+ .lighting .shade:nth-child(2) {
+	 ransform: rotate(90deg);
+	 transform: scaleX(-1);
+	 right: 0;
+	 left: auto;
+}
+ .lighting .lamp {
+	 width: 0;
+	 height: 0;
+	 border-style: solid;
+	 border-width: 0 900px 900px 200px;
+	 border-color: transparent transparent #388abd transparent;
+	 position: absolute;
+	 top: -150px;
+	 animation: lamp_move 9.25s linear forwards infinite;
+	 filter: blur(25px);
+	 opacity: 0.25;
+}
+ .sky {
+	 position: absolute;
+	 top: 0;
+	 left: 0;
+	 width: 100%;
+	 height: 36%;
+	 max-height: 420px;
+	 z-index: 2;
+	 overflow: hidden;
+}
+ .sky .gradient {
+	 position: absolute;
+	 top: 0;
+	 width: 100%;
+	 height: 100%;
+	 min-height: 300px;
+	 background-image: linear-gradient(to bottom, #162662, #123c77, #11528a, #1b689b, #2d7fab);
+}
+ .sky .moon {
+	 height: 100px;
+	 width: 100px;
+	 border-radius: 50px;
+	 background: white;
+	 position: absolute;
+	 top: -20px;
+	 left: 20%;
+	 z-index: 30;
+	 opacity: 0.1;
+}
+ .sky .star {
+	 height: 2px;
+	 width: 2px;
+	 filter: blur(1px);
+	 position: absolute;
+	 z-index: 3;
+	 background: white;
+}
+ .star:nth-child(1) {
+	 top: 661307987501px;
+	 left: 74769995990vw;
+}
+ .star:nth-child(2) {
+	 top: 35145748057px;
+	 left: 165512836455vw;
+}
+ .star:nth-child(3) {
+	 top: 803655496420px;
+	 left: 125395711498vw;
+}
+ .star:nth-child(4) {
+	 top: 198310860399px;
+	 left: 29769094712vw;
+}
+ .star:nth-child(5) {
+	 top: 783680590888px;
+	 left: 28320575437vw;
+}
+ .star:nth-child(6) {
+	 top: 685113901470px;
+	 left: 203803472766vw;
+}
+ .star:nth-child(7) {
+	 top: 423529382599px;
+	 left: 75597002271vw;
+}
+ .star:nth-child(8) {
+	 top: 484703030537px;
+	 left: 28491405423vw;
+}
+ .star:nth-child(9) {
+	 top: 584614434157px;
+	 left: 160950663122vw;
+}
+ .star:nth-child(10) {
+	 top: 231722404157px;
+	 left: 40075864235vw;
+}
+ .star:nth-child(11) {
+	 top: 494009290167px;
+	 left: 200386836484vw;
+}
+ .star:nth-child(12) {
+	 top: 24365625759px;
+	 left: 158811108715vw;
+}
+ .star:nth-child(13) {
+	 top: 297778488146px;
+	 left: 60404126761vw;
+}
+ .star:nth-child(14) {
+	 top: 475351817203px;
+	 left: 89062685265vw;
+}
+ .star:nth-child(15) {
+	 top: 436667631512px;
+	 left: 178860802939vw;
+}
+ .star:nth-child(16) {
+	 top: 405034428118px;
+	 left: 131560242660vw;
+}
+ .star:nth-child(17) {
+	 top: 651843800036px;
+	 left: 98301370395vw;
+}
+ .star:nth-child(18) {
+	 top: 366601101611px;
+	 left: 3349121014vw;
+}
+ .star:nth-child(19) {
+	 top: 147362857623px;
+	 left: 177337262278vw;
+}
+ .star:nth-child(20) {
+	 top: 38426736473px;
+	 left: 154977256785vw;
+}
+ .star:nth-child(21) {
+	 top: 653905458930px;
+	 left: 190702381693vw;
+}
+ .star:nth-child(22) {
+	 top: 499799866106px;
+	 left: 4855526924vw;
+}
+ .star:nth-child(23) {
+	 top: 331563957186px;
+	 left: 138638379422vw;
+}
+ .star:nth-child(24) {
+	 top: 365772512103px;
+	 left: 94350594704vw;
+}
+ .star:nth-child(25) {
+	 top: 815335665624px;
+	 left: 162806085642vw;
+}
+ .star:nth-child(26) {
+	 top: 487693379366px;
+	 left: 65071856204vw;
+}
+ .star:nth-child(27) {
+	 top: 423647648727px;
+	 left: 196801488489vw;
+}
+ .star:nth-child(28) {
+	 top: 762138513597px;
+	 left: 67449743543vw;
+}
+ .star:nth-child(29) {
+	 top: 18136065496px;
+	 left: 43092410934vw;
+}
+ .star:nth-child(30) {
+	 top: 197147265867px;
+	 left: 79688697808vw;
+}
+ .star:nth-child(31) {
+	 top: 827047863099px;
+	 left: 56679698534vw;
+}
+ .star:nth-child(32) {
+	 top: 787914226182px;
+	 left: 121148865316vw;
+}
+ .star:nth-child(33) {
+	 top: 586659620773px;
+	 left: 1206787188vw;
+}
+ .star:nth-child(34) {
+	 top: 354814110418px;
+	 left: 188847059466vw;
+}
+ .star:nth-child(35) {
+	 top: 273885501438px;
+	 left: 59379841321vw;
+}
+ .star:nth-child(36) {
+	 top: 302551703426px;
+	 left: 205245610154vw;
+}
+ .star:nth-child(37) {
+	 top: 455743262063px;
+	 left: 148893180304vw;
+}
+ .star:nth-child(38) {
+	 top: 251534985290px;
+	 left: 190393685394vw;
+}
+ .star:nth-child(39) {
+	 top: 550746743275px;
+	 left: 178495202937vw;
+}
+ .star:nth-child(40) {
+	 top: 776036807885px;
+	 left: 99371954134vw;
+}
+ .star:nth-child(41) {
+	 top: 820308669129px;
+	 left: 30726799841vw;
+}
+ .star:nth-child(42) {
+	 top: 260146047661px;
+	 left: 99098288069vw;
+}
+ .star:nth-child(43) {
+	 top: 390106150493px;
+	 left: 58455679302vw;
+}
+ .star:nth-child(44) {
+	 top: 292585571830px;
+	 left: 130711378363vw;
+}
+ .star:nth-child(45) {
+	 top: 794543768306px;
+	 left: 115406349221vw;
+}
+ .star:nth-child(46) {
+	 top: 446451290063px;
+	 left: 97899739047vw;
+}
+ .star:nth-child(47) {
+	 top: 782408790115px;
+	 left: 29548461626vw;
+}
+ .star:nth-child(48) {
+	 top: 673547693659px;
+	 left: 137080607538vw;
+}
+ .star:nth-child(49) {
+	 top: 830676949991px;
+	 left: 98222814615vw;
+}
+ .star:nth-child(50) {
+	 top: 608900501917px;
+	 left: 5203762299vw;
+}
+ .pole {
+	 width: 40px;
+	 height: 120vh;
+	 z-index: 75;
+	 position: absolute;
+	 top: 0;
+	 background: #221f30;
+	 filter: blur(3px);
+	 animation: lamp_move_pole 9.25s linear forwards infinite;
+	 transform: translateX(200px);
+}
+ .cans {
+	 width: 600px;
+	 height: 100px;
+	 z-index: 85;
+	 position: absolute;
+	 bottom: 0;
+	 display: flex;
+	 align-items: flex-end;
+	 filter: blur(2px);
+	 animation: lamp_move_pole 9.25s linear forwards infinite;
+	 transform: translateX(0px);
+}
+ .cans .can {
+	 background: #111;
+	 width: 33%;
+}
+ .cans__one {
+	 height: 20px;
+	 transform: rotate(-2deg);
+}
+ .cans__two {
+	 height: 40px;
+	 transform: rotate(2deg);
+}
+ .cans__three {
+	 height: 30px;
+}
+ .cans.two {
+	 transform: translateX(200px);
+}
+ .cans.three {
+	 transform: translateX(-500px);
+}
+ .title {
+	 color: white;
+	 font-size: 2em;
+	 position: absolute;
+	 bottom: calc(50% + 1em);
+	 left: 15%;
+	 margin: 0;
+	 line-height: 1;
+}
+ .author {
+	 opacity: 0;
+	 color: white;
+	 position: absolute;
+	 bottom: 50%;
+	 text-align: center;
+	 right: calc(50% - 180px);
+	 z-index: 100;
+	 transition: 1.5s ease-in-out;
+}
+ #autoplay {
+	 position: absolute;
+	 top: 1em;
+	 left: 1em;
+	 color: white;
+	 opacity: 0.25;
+	 z-index: 50;
+	 cursor: pointer;
+}
+ .floor {
+	 opacity: 0.45;
+	 display: flex;
+	 border-top: 2px solid #444;
+	 border-bottom: 2px solid #444;
+	 transform: rotateX(70deg);
+	 position: absolute;
+	 left: -115px;
+	 top: calc(50% + 110px);
+	 z-index: -5;
+	 animation: world_move 6.25s linear forwards infinite;
+}
+ .floor .row {
+	 display: flex;
+	 flex-direction: column;
+}
+ .floor .row:nth-child(odd) .brick:nth-child(3) {
+	 height: 15px;
+}
+ .floor .row:nth-child(even) .brick:nth-child(1) {
+	 height: 15px;
+}
+ .floor .brick {
+	 height: 30px;
+	 width: 15px;
+	 border: 1px solid #090f18;
+	 float: left;
+	 background: rgba(24, 50, 73, 1);
+}
+ @keyframes leg_top {
+	 0%, 100% {
+		 transform: rotate(-20deg);
+	}
+	 50% {
+		 transform: rotate(10deg);
+	}
+}
+ @keyframes leg_fore {
+	 0%, 20%, 50% {
+		 transform: rotateZ(0deg);
+	}
+	 0% {
+		 bottom: -70px;
+	}
+	 15% {
+		 bottom: -74px;
+	}
+	 60% {
+		 bottom: -70px;
+	}
+	 80% {
+		 transform: rotate(50deg);
+	}
+}
+ @keyframes leg_top_back {
+	 0%, 100% {
+		 transform: rotate(10deg);
+	}
+	 50% {
+		 transform: rotate(-20deg);
+	}
+}
+ @keyframes leg_fore_back {
+	 0% {
+		 transform: rotate(0deg);
+	}
+	 30% {
+		 transform: rotate(45deg);
+	}
+	 50% {
+		 transform: rotate(0deg);
+	}
+	 65% {
+		 bottom: -73px;
+	}
+	 80% {
+		 transform: rotate(0deg);
+	}
+}
+ @keyframes bounce {
+	 0% {
+		 transform: translateY(0);
+	}
+	 25%, 75% {
+		 transform: translateY(-3px);
+	}
+	 50% {
+		 transform: translateY(0);
+	}
+	 100% {
+		 transform: translateY(0);
+	}
+}
+ @keyframes bop {
+	 0%, 50%, 100% {
+		 transform: translateY(0) scale(0.7, 1.25);
+	}
+	 25%, 75% {
+		 transform: translateY(-2px) scale(0.73, 1.25);
+	}
+}
+ @keyframes bop_head {
+	 0%, 50%, 100% {
+		 transform: translate3d(-4px, 8px, 0) scale(0.85);
+	}
+	 25%, 75% {
+		 transform: translate3d(-4px, 9px, 0) rotate(2deg) scale(0.85);
+	}
+}
+ @keyframes foot_front {
+	 0% {
+		 transform: rotate(-10deg);
+	}
+	 15% {
+		 transform: rotate(10deg);
+	}
+	 55% {
+		 transform: rotate(-16deg);
+	}
+	 65% {
+		 transform: rotate(25deg);
+	}
+	 97% {
+		 background: #111;
+		 transform: rotate(-10deg);
+	}
+	 100% {
+		 background: #111;
+		 transform: rotate(-10deg);
+	}
+}
+ @keyframes foot_back {
+	 0% {
+		 transform: rotate(-10deg);
+	}
+	 15% {
+		 transform: rotate(20deg);
+	}
+	 55% {
+		 transform: rotate(-10deg);
+	}
+	 70% {
+		 transform: rotate(6deg);
+	}
+	 97% {
+		 background: #111;
+	}
+	 100% {
+		 background: #111;
+		 transform: rotate(-15deg);
+	}
+}
+ @keyframes shadow {
+	 0%, 50%, 100% {
+		 bottom: -57px;
+		 z-index: -2;
+	}
+	 25%, 75% {
+		 bottom: -60px;
+		 width: 105px;
+		 margin-left: -10px;
+		 z-index: -2;
+	}
+}
+ @keyframes world_move {
+	 0% {
+		 left: -115px;
+	}
+	 100% {
+		 left: -1000px;
+	}
+}
+ @keyframes lamp_move {
+	 0% {
+		 left: 2400px;
+	}
+	 100% {
+		 left: -1000px;
+	}
+}
+ @keyframes lamp_move_pole {
+	 0% {
+		 left: 2600px;
+	}
+	 100% {
+		 left: -1100px;
+	}
+}
+ @keyframes cans_move {
+	 0% {
+		 left: 3200px;
+	}
+	 100% {
+		 left: -1600px;
+	}
+}
+ body.pause *, body.pause *:after, body.pause *:before {
+	 animation-play-state: paused !important;
+}
+ body.pause .author {
+	 opacity: 0.25;
+	 mix-blend-mode: overlay;
+}
+ 
+
+
+  </style>
+  
+</head>
+<body>
+
+
+<div class="first_design">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12 col-12">
+				<p class="author">
+  Hold right arrow
+</p>
+<p id="autoplay">Auto play</p>
+<div class="man">
+
+  <div class="arm front">
+    <div class="arm__top">
+      <div class="arm__fore"></div>
+    </div>
+  </div>
+
+  <div class="arm back">
+    <div class="arm__top">
+      <div class="arm__fore"></div>
+    </div>
+  </div>
+
+  <div class="head">
+    <div class="head__hair"></div>
+    <div class="head__ear"></div>
+    <div class="head__nose"></div>
+    <div class="head__eye"></div>
+  </div>
+
+  <div class="body">
+    <div class="body__belly"></div>
+  </div>
+  <div class="pelvis"></div>
+  <div class="leg">
+    <div class="leg__top">
+      <div class="leg__fore"></div>
+    </div>
+  </div>
+  <div class="leg back">
+    <div class="leg__top">
+      <div class="leg__fore"></div>
+    </div>
+  </div>
+</div>
+
+<div class="road"></div>
+
+<!--- This is a wasteland, don't look on from here -->
+<div class="wall">
+</div>
+
+<div class="crack">
+  <div class="brick"></div>
+  <div class="brick"></div>
+  <div class="brick"></div>
+  <div class="brick"></div>
+</div>
+
+<div class="lighting">
+
+  <div class="lamp"></div>
+  <div class="shade"></div>
+  <div class="shade"></div>
+</div>
+
+<div class="pole"></div>
+
+<div class="cans">
+  <div class="cans__one can"></div>
+  <div class="cans__two can"></div>
+  <div class="cans__three can"></div>
+</div>
+<div class="cans two">
+  <div class="cans__one can"></div>
+  <div class="cans__two can"></div>
+  <div class="cans__three can"></div>
+</div>
+<div class="cans three">
+  <div class="cans__one can"></div>
+  <div class="cans__two can"></div>
+  <div class="cans__three can"></div>
+</div>
+<div class="sky">
+  <div class="moon"></div>
+  <div class="gradient"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+</div>
+
+<div class="floor">
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+  <div class="row">
+    <div class="brick"></div>
+    <div class="brick"></div>
+    <div class="brick"></div>
+  </div>
+</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<script src="js/jquery.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+<script>
+	
+// JS just toggles a class
+
+document.onkeydown = KeyDown;
+document.body.classList = "pause";
+
+function KeyDown(event) {
+  var KeyID = event.which;
+  if (KeyID == 39) {
+    document.body.classList.remove("pause");
+  }
+}
+
+document.onkeyup = KeyUp;
+
+function KeyUp(event) {
+  var KeyID = event.which;
+  if (KeyID == 39) {
+    document.body.classList = "pause";
+  }
+}
+
+document.getElementById("autoplay").addEventListener("click", function() {
+  document.body.classList.remove("pause");
+});
+
+
+</script>
+
+</body>
+</html>
+
+

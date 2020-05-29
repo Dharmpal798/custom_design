@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Javascript</title>  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">   
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/custom.css">
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <style>    
+
+    body {   
+        padding-top: 50px;
+        text-align: center;
+    }     
+
+  </style> 
+  
+</head>
+
+<body>
+
+
+<div class="first_design">  
+   <div class="container">
+      <div class="row">
+         <div class="col-lg-6 col-12  text-center">
+            <button type="submit" onclick="myFun()">Click Here</button>
+            <p id="demos" class="text-center mt-5"></p>
+         </div>
+         <div class="col-lg-6 col-12  text-center">
+              
+         </div>
+      </div>
+   </div>
+</div>
+
+
+
+<script src="js/jquery.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+<script>
+  
+  // var a = ["Vivek", "Shubham", "Suraj", "Brijesh", "Shivdhan"];
+
+  // document.write(a[0]); 
+
+  function myFun() { 
+    // alert('hii Dharam');
+    var mynewFun = new Function("a", "b", " return a * b ");
+    // document.write(mynewFun(4, 3)); 
+    // document.getElementById('demos').innerHTML = mynewFun(4, 3);
+    // console.log(mynewFun(53, 75));
+    alert(mynewFun(75, 85)); 
+    // window.alert(mynewFun(4, 3));
+    // prompt(mynewFun(4, 3)); 
+
+  }
+
+  // second example learn
+
+  
+
+   
+
+</script> 
+
+</body>
+</html>

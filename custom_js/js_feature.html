@@ -1,0 +1,2533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Custom Javascript</title>
+  <meta charset="utf-8">
+
+  <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">  -->    
+
+  <style> 
+ 
+ body {   
+  	text-align: center; 
+ }
+
+.first_design {                    
+
+}
+
+  </style>                             
+  
+</head>
+<body>
+
+<div class="first_design">       
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-12">
+                <h1 id="demos"></h1>           
+                <!-- <button onclick="userClick()">Click me</button> -->  
+            </div> 
+        </div>
+    </div>
+</div>                                       
+
+<script> 
+
+// demo examples
+
+// current examples 
+                        
+// 	const user = { 
+// 	  name: "John",
+// 	  lname: "Deo",
+// 	  fullname: function() {
+// 	      return this.name + " " + this.lname;
+// 	  },
+// 	  age: 30 
+// 	}; 
+
+
+// document.write(user.fullname());  
+
+// alert(user.name);
+// document.getElementById('demos').innerHTML = user.name;
+// window.alert(user.name);
+
+// third examples
+
+'use strict'; 
+
+// let users = [
+//   {id: 1, name: "John"},
+//   {id: 2, name: "Pete"},
+//   {id: 3, name: "Mary"}, 
+//   {id: 4, name: "Mansi"},
+//   {id: 5, name: "Piya"}
+// ];
+
+// // returns array of the first two users
+// let someUsers = users.filter(item => item.id < 3);
+// document.write(someUsers.length);           
+
+// ["Bilbo", "Gandalf", "Nazgul"].forEach((item, index, array) => {
+//   document.write(`${item} is at index ${index} in ${array} <br>`);  
+// });    
+
+
+// number Iterables start
+
+// let range = {
+//   from: 1,
+//   to: 10
+// };
+
+// range[Symbol.iterator] = function() {
+//    return {
+//       current: this.from, 
+//       last: this.to,
+
+//       next() {
+
+//          if(this.current <= this.last) {
+//               return {
+//                   done: false,
+//                   value: this.current++
+//               }
+//            }
+//               else {
+//                   return {
+//                      done: true
+//                   }
+//               }
+//       }
+//    };
+// };
+
+// for (let num of range) {
+//   document.write(num + "<br>");  
+// }
+
+// let str = "Hello";
+
+// // does the same as
+// // for (let char of str) alert(char);
+
+// let iterator = str[Symbol.iterator]();
+
+// while (true) {
+//   let result = iterator.next();
+//   if (result.done) break;
+//   alert(result.value);  // outputs characters one by one
+// }
+
+// function slice(str, start, end) {
+//   return Array.from(str).slice(start, end).join('');
+// }
+
+// let str = '𝒳😂𩷶';
+
+// document.write( slice(str, 1, 3) ); // 😂𩷶
+
+// document.write("<br>"); 
+
+// // the native method does not support surrogate pairs
+// document.write( str.slice(1, 3) ); // garbage (two pieces from different surrogate pairs)
+
+// number Iterables end   
+
+// Destructuring assignment start   
+
+// let [firstName, , title] = ["Julius", "Caesar", "Consul", "of the Roman Republic"];
+
+// document.write(title); // Consul      
+    
+
+// let user = {};
+// [user.name, user.surname] = "Ilya Kantor".split(' ');
+
+// document.write(user.name); // Ilya   
+
+// let user = {
+//   name: "John",
+//   age: 30
+// };
+
+// // loop over keys-and-values
+// for (let [key, value] of Object.entries(user)) { 
+//   // alert(`${key}:${value}`); // name:John, then age:30
+// }          
+
+// for (let [key, value] of Object.entries(user)) {                            
+//    document.write(`${key}:${value}: <br>`);
+// }
+
+// map method start
+
+// let user = new Map()
+//    user.set("name", "John");
+//    user.set("age", "30");
+
+//    for (let [key, value] of user) {
+//       document.write(`${key}:${value} <br>`);                                 
+//    }    
+
+// document.write("<br>");   
+
+// map method end
+
+// let options = {
+//   title: "Menu",
+//   width: 100,
+//   height: 200
+// };
+
+// let {title, width, height} = options;
+
+// document.write(title);  // Menu
+// document.write("<br>"); 
+// document.write(width);  // 100
+// document.write("<br>"); 
+// document.write(height); // 200
+
+// Destructuring assignment end 
+
+// let options = {
+//    title: "menus",
+//    width: 200,
+//    height: 300,
+// };
+
+// let {title, width, height}   = options;
+
+// document.write(title);
+// document.write("<br>");
+// document.write(width);
+// document.write("<br>");
+// document.write(height);
+
+// let options = {
+//     title: "menus2" 
+// }
+
+// let {width = prompt("width?"), title = prompt("title?")} = options;
+
+// alert(title);
+// alert(width); 
+
+/*******************/
+
+// let user = {
+//   name: "John",
+//   years: 30
+// }; 
+
+// let {name, years: age, isAdmin = false} = user;
+
+// alert( name ); // John
+// alert( age ); // 30
+// alert( isAdmin ); // false          
+
+/*******************/
+
+// function topSalary(salaries) {
+
+//   let max = 0;
+//   let maxName = null;
+
+//   for(const [name, salary] of Object.entries(salaries)) {
+//     if (max < salary) {
+//       max = salary;
+//       maxName = name;
+//     }
+//   }
+
+//   return maxName;                                    
+// }
+
+/*********************/
+
+
+// string method start
+
+// function sum(a, b) {                
+//   return a * b;  
+// }
+
+// document.write(`${sum(11, 22)}`); 
+
+/*************************/                                         
+
+// let str1 = "Hello World"; // two lines using a "newline symbol"
+
+// // two lines using a normal newline and backticks
+// let str2 = `Hello World`; 
+
+// document.write(str1 == str2); // true 
+
+/****************************/
+
+// let str = "Hello"; 
+                        
+// // the first character
+// document.write( str[0] ); // H
+// document.write( str.charAt(2) ); // H
+
+// // the last character
+// document.write( str[str.length - 1] ); // o                           
+
+// ok got it 
+
+/**************************/  
+
+// for (let char of "Hello Dharam") {
+//     alert(char);
+// }  
+
+/***************************/
+
+// let str = 'Hi'; 
+
+// str = 'h' + str[1]; // replace the string 
+
+// alert( str );      
+
+/*****************************/ 
+
+// document.write( 'Dharama'.toUpperCase() ); // INTERFACE   
+// document.write("<br>"); 
+// document.write( 'INTERFACE'.toLowerCase() ); // interface             
+
+/******************************/                  
+
+// let str = 'Widget with id';         
+
+// document.write( str.indexOf('Widget') ); // 0, because 'Widget' is found at the beginning
+// document.write("<br>"); 
+// document.write( str.indexOf('widget') ); // -1, not found, the search is case-sensitive
+// document.write("<br>"); 
+// document.write( str.indexOf("id") ); // 1, "id" is found at the position 1 (..idget with id)
+
+/*****************************/  
+
+// let str = 'Widget with id';
+
+// document.write( str.indexOf('id', 2) ) // 12             
+
+/*****************************/
+
+// let str = 'As sly as a fox, as strong ox as an ox';
+
+// let target = 'ox'; // let's look for it
+
+// let pos = 0;
+// while (true) {
+//   let foundPos = str.indexOf(target, pos);
+//   if (foundPos == -1) break;
+
+//   document.write( `Found at ${foundPos} <br>` );  
+//   pos = foundPos + 1; // continue the search from the next position
+// }
+
+/**************************/
+
+// self practice examples    
+
+// let str = 'As sly as a fox, as sly strong ox sly as an ox sly datasilk sly';  
+
+// let settarget = 'sly'; 
+// let poses = 0;
+
+// while(true) {
+//     let foundPos = str.indexOf(settarget, poses); 
+//     if (foundPos == -1) break; {
+//         document.write(foundPos + "<br>"); 
+//         poses = foundPos + 1;  
+//     }
+// }      
+
+/*********************/        
+
+// let str = "As sly as a fox, as strong as an ox";
+// let target = "as";
+
+// let pos = -1;
+// while ((pos = str.indexOf(target, pos + 1)) != -1) {
+//   console.log(pos); 
+// }
+
+/*************************/
+
+// let str = "Widget with id";                                
+
+// if (str.indexOf("Widget")) {
+//     alert("We found it"); // doesn't work!
+// }
+
+/********************************/  
+
+// let str = "";
+ 
+// for (let i = 65; i <= 220; i++) {                                        
+//     str += String.fromCodePoint(i); 
+// }
+
+// alert( str ); 
+
+/*********************************/
+
+// function ucFirst(str) {
+//   if (!str) return str;
+
+//   return str[2].toUpperCase() + str.slice(1); 
+// }
+
+// document.write( ucFirst("john deo") );
+
+// console.log( ucFirst("dharam product") );
+
+// alert( ucFirst("labi singh") );  
+
+/*********************************/
+
+// function checkSpam(str) {                
+//   let lowerStr = str.toLowerCase();
+//   return lowerStr.includes('viagra') || lowerStr.includes('xxx') || lowerStr.includes('innocent'); 
+// }
+
+// document.write( checkSpam('buy ViAgRA now') );
+// document.write('<br>');
+// document.write( checkSpam('free xxxxx') );
+// document.write('<br>');
+// document.write( checkSpam("innocent rabbit") );
+
+// console.log( checkSpam('buy ViAgRA now') );
+// console.log( checkSpam('free xxxxx') );
+// console.log( checkSpam("innocent rabbit") ); 
+
+/*********************************/
+
+// function truncate(str, maxlength) {
+//   return (str.length > maxlength) ?
+//     str.slice(0, maxlength - 1) + '…' : str;
+// }      
+
+/*********************************/
+
+// function extractCurrencyValue(str) {
+//   return +str.slice(1);
+// }  
+
+/**********************************/ 
+
+// string method end       
+
+/*********************/     
+
+// Map and Set start
+
+/**********************************/
+
+// let maps = new Map(); 
+
+// maps.set('1', 'str1'); 
+// maps.set(1, 'num1'); 
+// maps.set(true, 'bool1');
+
+// alert( maps.get(1) );
+// alert( maps.get('1') ); 
+// alert( maps.size );
+
+// console.log( maps.get(1) );
+// console.log( maps.get('1') ); 
+// console.log( maps.size );               
+
+/**********************************/
+
+// let peter = {
+//    name: "peter"
+// }; 
+
+// let visitsCountMap = new Map(); 
+
+// visitsCountMap.set(peter, 6000); 
+
+// // alert(visitsCountMap.get(peter));
+// document.write(visitsCountMap.get(peter));
+
+// console.log(visitsCountMap.get(peter)); 
+
+/**********************************/
+
+// let john = {                                                    
+//    name: "john"  
+// };
+
+// let visitsCountObj = {};
+
+// visitsCountObj[john] = 350;
+
+// // alert( visitsCountObj["[object Object]"] );
+// document.write( visitsCountObj["[object Object]"] );         
+// console.log( visitsCountObj["[object Object]"] );           
+
+/**********************************/
+
+// let recipeMap = new Map([
+//     ['kaju', 900],
+//     ['badam', 1000],
+//     ['tomatos', 100],
+//     ['onion', 50]
+// ]); 
+
+// for(let dryfruits of recipeMap.keys()) {
+//     // alert(dryfruits); 
+//     document.write(dryfruits + "<br>");         
+//     console.log(dryfruits);                                                  
+// }
+
+// for (let amounts of recipeMap.values()) {
+//     // alert(amounts); 
+//     document.write(amounts + "<br>"); 
+//     console.log(amounts); 
+// }
+
+// for (let entry of recipeMap) {
+//     // alert(entry); 
+//     document.write(entry + "<br>"); 
+//     console.log(entry); 
+// }          
+
+/*************************************/
+
+// let map = new Map([
+//   ['1',  'str1'],
+//   [1,    'num1'],
+//   [true, 'bool1']
+// ]);
+
+// alert( map.get('1') ); // str1   
+// document.write( map.get('1') );
+// console.log( map.get('1') );  
+
+/************************************/
+
+// let obj = {
+//   name: "Karma",
+//   age: 30
+// };
+
+// let map = new Map(Object.entries(obj));
+
+// // alert(map.get('name'));
+// document.write(map.get('name'));
+// console.log(map.get('name'));   
+
+/***********************************/
+
+//  let prices = Object.fromEntries([
+//     ['kaju', 900],
+//     ['badam', 1000],
+//     ['tomatos', 100],
+//     ['onion', 50]
+// ]); 
+
+//  // alert(prices.tomatos);
+//  document.write(prices.tomatos);
+//  console.log(prices.tomatos); 
+
+ /**********************************/
+
+// let map = new Map(); 
+// map.set('banana', 1000); 
+// map.set('orange', 4500);
+// map.set('meat', 80000); 
+
+// let obj = Object.fromEntries(map.entries()); // make a plain object (*)
+
+// // done!
+// // obj = { banana: 1, orange: 2, meat: 4 }
+
+// // alert(obj.orange); // 2 
+// document.write(obj.meat);                           
+// console.log(obj.meat);                    
+
+
+/***********************************/ 
+
+// Set
+
+// A Set is a special type collection – “set of values” (without keys), where each value may occur only once.
+
+// Its main methods are:
+
+// new Set(iterable) – creates the set, and if an iterable object is provided (usually an array), copies values from it into the set.
+// set.add(value) – adds a value, returns the set itself.
+// set.delete(value) – removes the value, returns true if value existed at the moment of the call, otherwise false.
+// set.has(value) – returns true if the value exists in the set, otherwise false.
+// set.clear() – removes everything from the set.
+// set.size – is the elements count.
+
+/************************************/
+
+// let set = new Set();
+
+// let a = { name: "john" };
+// let b = { name: "peter" };
+// let c = { name: "neha" };
+// let d = { name: "kuvar" };
+
+// set.add(a); 
+// set.add(b);
+// set.add(c);
+// set.add(d);  
+
+// // alert( set.size );
+// document.write(set.size + "<br>");                           
+// console.log(set.size);  
+
+// for (let user of set) {
+//   // alert(user.name); 
+//   document.write(user.name + "<br>");                        
+//   console.log(user.name);     
+// }
+
+/************************************/
+
+// let set = new Set(["oranges", "apples", "bananas", "grapes", "papaya", "mango", "pinapples"]); 
+
+// for (let value of set) {
+//     // alert(value);
+//     document.write(value + "<br>"); 
+//     console.log(value);                     
+// };
+
+// set.forEach((value, valueAgain, set) => {
+//     // alert(value);
+//     document.write(value + "<br>"); 
+//     console.log(value);                                     
+// });
+
+/************************************/
+
+/*********************/        
+
+// Map and Set end   
+
+/*************************************/ 
+
+// Date and time start
+
+/*************************************/
+
+// let now = new Date();
+
+// // alert(now); 
+// document.write(now);
+// console.log(now);
+
+/*************************************/
+
+// let Jan02_1970 = new Date("2017-04-28");
+// alert( Jan02_1970 );  
+// document.write(Jan02_1970); 
+// console.log(Jan02_1970);
+
+/*************************************/
+
+// let date = new Date(2011, 0, 1, 2, 3, 4, 567); 
+// alert( date ); // 1.01.2011, 02:03:04.567                      
+
+/*************************************/
+
+// current date
+// let date = new Date();
+
+// // the hour in your current time zone
+// alert( date.getHours() );
+
+// // the hour in UTC+0 time zone (London time without daylight savings)
+// alert( date.getUTCHours() );     
+
+/************************************/
+
+// Setting date components
+// The following methods allow to set date/time components:
+
+// setFullYear(year, [month], [date])
+// setMonth(month, [date])
+// setDate(date)
+// setHours(hour, [min], [sec], [ms])
+// setMinutes(min, [sec], [ms])
+// setSeconds(sec, [ms])
+// setMilliseconds(ms)
+// setTime(milliseconds) (sets the whole date by milliseconds since 01.01.1970 UTC)
+
+/*************************************/
+
+// function formateDate(date) {
+
+//     let diff = new Date() - date; 
+
+//     if (diff < 1000) {
+//         return 'right now';  
+//     }
+
+//     let sec = Math.floor(diff / 1000);
+
+//     if (sec < 60) {
+//       return sec + "sec.ago"; 
+//     }
+
+//     let min = Math.floor(diff / 60000);
+
+//     if (min < 60) {
+//         return min + "min.ago"; 
+//     }
+
+//     let d = date;
+
+//     d = [
+//          '0' + d.getDate(),
+//           '0' + (d.getMonth() + 1),
+//           '' + d.getFullYear(),
+//           '0' + d.getHours(),
+//           '0' + d.getMinutes()
+//     ].map(component => component.slice(-2));
+//     return d.slice(0, 3).join('.') + ' ' + d.slice(3).join(':'); 
+
+// }   
+
+// // alert( formateDate(new Date(new Date - 1)) );
+// document.write(formateDate(new Date(new Date - 1)));
+// console.log(formateDate(new Date(new Date - 1)));
+// document.write("<br>");
+
+// // alert(formateDate(new Date(new Date - 30 * 1000)) );  
+// document.write(formateDate(new Date(new Date - 30 * 1000)) ); 
+// console.log(formateDate(new Date(new Date - 30 * 1000)) );
+// document.write("<br>"); 
+
+// // alert(formateDate(new Date(new Date - 5 * 60 * 1000)) );    
+// document.write(formateDate(new Date(new Date - 5 * 60 * 1000)) );
+// console.log(formateDate(new Date(new Date - 5 * 60 * 1000)) );  
+// document.write("<br>");
+
+// // alert(formateDate(new Date(new Date - 84600 * 1000)) );   
+// document.write(formateDate(new Date(new Date - 84600 * 1000)) );
+// console.log(formateDate(new Date(new Date - 84600 * 1000)) );                      
+
+/*************************************/  
+
+// function formateDate(date) { 
+//     let dayOfMonth = date.getDate();
+//     let month = date.getMonth() + 1;
+//     let year = date.getFullYear();
+//     let hour = date.getHours();
+//     let minutes = date.getMinutes();
+//     let diffMs = new Date() - date;
+//     let diffSec = Math.round(diffMs / 1000);
+//     let diffMin = diffSec / 60;
+//     let diffHour = diffMin / 60;
+
+// // formatting
+
+// year = year.toString().slice(-2); 
+// month = month < 10 ? '0' + month : month;
+// dayOfMonth = dayOfMonth < 10 ? '0' + dayOfMonth : dayOfMonth;
+// hour = hour < 10 ? '0' + hour : hour;
+// minutes = minutes < 10 ? '0' + minutes : minutes; 
+
+// if (diffSec < 1) {
+//     return 'right now';
+//     document.write('right now');
+// }
+
+// else if (diffMin < 1) {
+//     return `${diffSec} sec. ago`;
+//     document.write(`${diffSec} sec. ago`); 
+// }
+
+// else if (diffHour < 1) {
+//     return `${diffMin} min. ago`;
+//     document.write(`${diffMin} min. ago`);       
+// }
+
+// else {
+//     return `${dayOfMonth}.${month}.${year} ${hour}:${minutes}`; 
+//     document.write(`${dayOfMonth}.${month}.${year} ${hour}:${minutes}`); 
+// }
+
+
+// } 
+
+/*************************************/
+
+// Date and time end   
+
+/*************************************/   
+
+// Arrays start
+
+/*************************************/
+
+// let fruits = ["Apples", "Banana", "Mango", "grapes", "orange"];
+
+// // alert( fruits[0] );
+// document.write(fruits.length); 
+
+/*************************************/
+
+// let arr = [ "Mango", { name: "Dharam" }, true, function() {alert("hello")} ];
+
+// // alert(arr[1].name);
+// // document.write(arr[1].name);
+// document.write(arr[3]); 
+// console.log(arr[3]); 
+
+/*************************************/
+
+// let fruits = ["Apple", "Orange", "Pear"];
+
+// // alert( fruits.pop() ); // remove "Pear" and alert it 
+// document.write(fruits.pop()); 
+// console.log(fruits.pop());
+
+// document.write("<br>"); 
+
+// // alert( fruits ); // Apple, Orange          
+// document.write(fruits); 
+// console.log(fruits); 
+
+/*************************************/
+
+// let fruits = ["Apple", "Orange"];                                
+
+// fruits.push("Pear"); 
+// // document.write(fruits.push("Pear"));
+// // console.log(fruits.push("Pear"));
+
+// document.write("<br>"); 
+
+// alert( fruits ); // Apple, Orange, Pear
+// document.write(fruits);
+// console.log(fruits);            
+
+/*************************************/        
+
+// let fruits = ["Mango", "Orange"];
+
+// // fruits.push("Mango", "Orange"); 
+// fruits.unshift("Apple", "Banana");                  
+
+// alert(fruits);
+// document.write(fruits); 
+// console.log(fruits);                                 
+
+/*************************************/
+
+// let fruits = ["Apple"];
+
+// fruits.push("Orange", "Peach");
+// fruits.unshift("Pineapple", "Lemon");
+
+// // ["Pineapple", "Lemon", "Apple", "Orange", "Peach"]
+// alert( fruits ); 
+// document.write(fruits);
+// console.log(fruits);     
+
+/*************************************/ 
+
+// let fruits = ["Orange"];
+// let arr = fruits;
+
+// alert(arr === fruits);
+
+// arr.push("Mango");          
+
+// alert(fruits); 
+
+/*************************************/
+
+// let arr = ["Mango", "Banana", "Orange", "Grapes", "Pineapple", "Apple", "Watermelon"];
+
+// for(let i = 0; i < arr.length; i++) { 
+//     // alert(arr[i]);
+//     document.write(arr[i] + "<br>");  
+//     console.log(arr[i]); 
+// }
+
+// let fruits = ["Mango", "Banana", "Orange", "Grapes", "Pineapple", "Apple", "Watermelon"];
+
+// for(let fruit of fruits) {
+//     // alert(fruit); 
+//     document.write(fruit + "<br>");
+//     console.log(fruit);   
+// }
+
+// let fruits = ["Mango", "Banana", "Orange", "Grapes", "Pineapple", "Apple", "Watermelon"];
+
+// for(let key in fruits) {
+//     // alert(fruits[key]);
+//     document.write(fruits[key] + "<br>"); 
+//     console.log(fruits[key]);      
+// } 
+
+/*************************************/
+
+// let fruits = [];
+// fruits[140] = "Apple"; 
+
+// // alert(fruits.length);
+// document.write(fruits.length);
+// console.log(fruits.length);
+
+
+/*************************************/                      
+
+// let arr = [1, 2, 3, 4, 5];
+
+// arr.length = 2; // truncate to 2 elements
+// alert( arr ); // [1, 2]
+
+// arr.length = 5; // return length back
+// alert( arr[3] ); // undefined: the values do not return                                     
+
+/**************************************/
+
+// let arrays = new Array(2);
+
+// // alert(arrays[0]);
+// document.write(arrays[0]);
+// console.log(arrays);
+
+// document.write("<br>");
+
+// // alert(arrays.length);
+// document.write(arrays.length);
+// console.log(arrays.length);
+
+/**************************************/
+
+// let matrix = [
+//     [1, 2, 3],
+//     [4, 5, 6],
+//     [7, 8, 9]
+// ]
+
+// // alert(matrix[2][2]);
+// document.write(matrix[1][1]);
+// console.log(matrix[1][1]); 
+
+/**************************************/
+
+// let arr = [1, 2, 3];
+// // alert(arr);
+// document.write(arr);
+// console.log(arr);
+
+// document.write("<br>");  
+
+// // alert( String(arr) == '1,2,3' ); 
+// document.write(String(arr) == '1,2,3');
+// console.log(String(arr) == '1,2,3');             
+
+/**************************************/
+
+// alert( [] + 1 );
+// alert( [1] + 1 );
+// alert( [1, 2] + 1 ); 
+
+// document.write( [] + 1 );
+// document.write("<br>");
+// document.write( [1] + 1 );
+// document.write("<br>");
+// document.write( [1, 2] + [1] );  
+
+// console.log( [] + 1 );
+// console.log( [1] + 1 );
+// console.log( [1, 2] + [1, 2] );                             
+
+/**************************************/
+
+// alert( "" + 1 ); // "1"
+// alert( "1" + 1 ); // "11"
+// alert( "1,2" + 1 ); // "1,21"
+
+/**************************************/
+
+// let fruits = ["Mango", "Orange", "Banana", "Grapes"];
+
+// let shoppingFoods = fruits;
+
+// shoppingFoods.push("Apple");  
+
+// alert(shoppingFoods.length);
+
+/**************************************/
+
+// let arr = ["a", "b"]; 
+
+// arr.push(function() {
+//     alert( this ); 
+// })
+
+// arr[2]();    
+
+/**************************************/
+
+// function sumInput() {
+//     let numbers = [];     
+
+//     while(true) {
+
+//         let value = prompt("a number please?", 0); 
+//         if(value === "" || value == null || !isFinite(value)) {
+//             break; 
+
+//             numbers.push(+value);  
+//         } 
+
+//         let sum = 0;
+//         for(let number of numbers) { 
+//             sum += number;
+//         }
+
+//         return sum;  
+//     }
+// }
+
+// alert(sumInput()); 
+
+/**************************************/
+
+    // function getMaxSubSum (arr) {
+    //     let maxSum = 0; 
+
+    //     for(let i = 0; i < arr.length; i++) {
+    //         let sumFixedStart = 0;
+    //         for(let j = i; j < arr.length; j++) {
+    //             sumFixedStart += arr[j];
+    //             maxSum = Math.max(maxSum, sumFixedStart);
+    //         }
+    //     }
+
+    //     return maxSum; 
+    // }
+
+    // // alert( getMaxSubSum([-1, 2, 3, -9]) ); // 5
+    // document.write( getMaxSubSum([-1, 2, 3, -9]) );
+    // console.log( getMaxSubSum([-1, 2, 3, -9]) );
+    // document.write("<br>");
+
+    // // alert( getMaxSubSum([-1, 2, 3, -9, 11]) ); // 11
+    // document.write( getMaxSubSum([-1, 2, 3, -9, 11]) );
+    // console.log( getMaxSubSum([-1, 2, 3, -9, 11]) );
+    // document.write("<br>");
+
+    // // alert( getMaxSubSum([-2, -1, 1, 2]) ); // 3
+    // document.write( getMaxSubSum([-2, -1, 1, 2]) ); 
+    // console.log( getMaxSubSum([-2, -1, 1, 2]) );
+    // document.write("<br>"); 
+
+    // // alert( getMaxSubSum([1, 2, 3]) ); // 6
+    // document.write( getMaxSubSum([1, 2, 3]) );
+    // console.log( getMaxSubSum([1, 2, 3]) );
+    // document.write("<br>"); 
+
+    // // alert( getMaxSubSum([100, -9, 2, -3, 5]) ); // 100       
+    // document.write( getMaxSubSum([100, -9, 2, -3, 5]) ); 
+    // console.log( getMaxSubSum([100, -9, 2, -3, 5]) );
+
+/**************************************/                                  
+
+// Arrays end
+
+/**************************************/
+
+// WeakMap and WeakSet start
+
+/**************************************/ 
+
+// let weakMaps = new WeakMap();                                                               
+// let obj = {};
+
+// alert( weakMaps.set(obj, "ok hii") );  
+
+// alert( weakMaps.set("test", "whoops") );
+
+/**************************************/
+
+// let cache = new Map();                                       
+
+// function process(obj) {
+//     if(!cache.has(obj)) {
+//         let result = obj; 
+
+//         cache.set(obj, result);
+//     }
+
+//     return cache.get(obj); 
+// }
+
+//  let obj = {}
+//  let result1 = process(obj);
+//  let result2 = process(obj);  
+
+//  obj = null;
+
+//  // alert(cache.size);
+//  document.write(cache.size); 
+//  console.log(cache.size);
+
+/**************************************/ 
+
+// let visitedSet = new WeakSet(); 
+
+// let john = { name: "John" };
+// let peter = { name: "Peter" };
+// let mary = { name: "Mary" };                  
+
+// visitedSet.add(john);
+// visitedSet.add(peter);
+// visitedSet.add(mary);
+
+// alert(visitedSet.has(john));
+
+// alert(visitedSet.has(mary)); 
+
+// john = null;  
+
+/**************************************/   
+
+// copy code
+
+// let visitedSet = new WeakSet();
+
+// let john = { name: "John" };
+// let pete = { name: "Pete" };
+// let mary = { name: "Mary" };
+
+// visitedSet.add(john); // John visited us
+// visitedSet.add(pete); // Then Pete
+// visitedSet.add(john); // John again
+
+// // visitedSet has 2 users now
+
+// // check if John visited?
+// alert(visitedSet.has(john)); // true
+
+// // check if Mary visited?
+// alert(visitedSet.has(mary)); // false
+
+// john = null; 
+
+/**************************************/
+
+// let john = { name: "John" };
+
+// let weakMap = new WeakMap();
+// weakMap.set(john, "...");
+
+// alert(john = null); // overwrite the reference
+
+/**************************************/
+
+// let messages = [
+//   {text: "Hello", from: "John"},
+//   {text: "How goes?", from: "John"},
+//   {text: "See you soon", from: "Alice"}
+// ];
+
+// let readMessages = new WeakSet(); 
+
+// // two messages have been read
+// readMessages.add(messages[0]);
+// readMessages.add(messages[1]);                              
+// // readMessages has 2 elements
+
+// // ...let's read the first message again!
+// readMessages.add(messages[0]); 
+// // readMessages still has 2 unique elements  
+
+// // answer: was the message[0] read?
+// // alert("Read message 0: " + readMessages.has(messages[0])); // true
+// document.write("Read message 0: " + readMessages.has(messages[0]));
+// console.log("Read message 0: " + readMessages.has(messages[0]));
+
+// messages.shift("Read message 0: " + readMessages.has(messages[0]));                  
+
+// now readMessages has 1 element (technically memory may be cleaned later)
+
+/**************************************/  
+
+// let messages = [
+//   {text: "Hello", from: "John"},
+//   {text: "How goes?", from: "John"},
+//   {text: "See you soon", from: "Alice"}
+// ];
+
+// let readMap = new WeakMap();
+
+// readMap.set(messages[0], new Date(2017, 1, 1)); 
+
+// // alert( readMap.set(messages[0], new Date(2017, 1, 1)) );
+// document.write( readMap.set(messages[0], new Date(2017, 1, 1)) ); 
+// console.log( readMap.set(messages[0], new Date(2017, 1, 1)) ); 
+
+// Date object we'll study later
+
+/**************************************/
+
+// WeakMap and WeakSet end
+
+/**************************************/
+
+// JSON methods, toJSON start
+
+/**************************************/
+
+// let user = {
+//     name: "john",
+//     age: 24,
+//     roll: 276,
+
+//     toString() { 
+//         return `{ name: "${this.name}", age: ${this.age}, roll: ${this.roll} }`;  
+//     }
+// }
+
+// alert(user);  
+
+/**************************************/
+
+// let student = { 
+//     name: 'Dharam',
+//     age: 24,
+//     roll: 276,
+//     isAdmin: true,
+//     courses: ['Html5', 'Css3', 'Javascript', 'ReactJs']
+// }
+
+// let json = JSON.stringify(student);
+// alert(typeof json);
+
+// alert(json);
+// document.write(json + "<br>");
+// console.log(json); 
+
+/**************************************/
+
+// alert( JSON.stringify(false) );
+
+// alert( JSON.stringify(true) );
+// document.write( JSON.stringify(true) );
+// console.log( JSON.stringify(true) ); 
+
+// alert( JSON.stringify("Yahoo Baba") );  
+
+// alert( JSON.stringify([1, 2, 3]) );      
+
+/**************************************/
+
+// let user = {
+//     sayHii () {
+//         alert("Hello");
+//     },
+//     [Symbol("id")]: 123,
+//     something: undefined
+// };
+
+// alert( JSON.stringify(user) );
+// document.write( JSON.stringify(user) );
+// console.log( JSON.stringify(user) );  
+
+/**************************************/
+
+// let meetup = {
+//     title: "reference", 
+//     room: {
+//        temparature: 20,                                       
+//        number: 25,
+//        participance: ["Dharam", "Neha"]             
+//     }
+// };     
+
+// alert( JSON.stringify(meetup) ); 
+// document.write( JSON.stringify(meetup) );
+// console.log( JSON.stringify(meetup) ); 
+
+/**************************************/
+
+// let room = { 
+//   number: 23
+// };
+
+// let meetup = {
+//   title: "Conference",
+//   participants: ["john", "ann"]
+// };
+
+// meetup.place = room;       // meetup references room
+// room.occupiedBy = meetup; // room references meetup
+
+// JSON.stringify(meetup); 
+
+/**************************************/
+
+// let room = {
+//     number: 25
+// }
+
+// let meetup = {
+//     title: "Conference",
+//     participants: [{ name: "John"}, { name: "Deo" }],
+//     place: room
+// };
+
+// room.occupiedBy = meetup;
+
+// // alert( JSON.stringify(meetup, ['title', 'participants']) );
+// document.write( JSON.stringify(meetup, ['title', 'participants']) );
+// console.log( JSON.stringify(meetup, ['title', 'participants']) ); 
+
+/**************************************/
+
+// let room = {       
+//   number: 23
+// };
+
+// let meetup = { 
+//   title: "Conference",
+//   participants: [{name: "John"}, {name: "Alice"}], 
+//   place: room // meetup references room
+// };
+
+// room.occupiedBy = meetup; // room references meetup
+
+// // alert( JSON.stringify(meetup, ['title', 'participants', 'place', 'name', 'number']) ); 
+// document.write( JSON.stringify(meetup, ['title', 'participants', 'place', 'name', 'number']) );
+// console.log( JSON.stringify(meetup, ['title', 'participants', 'place', 'name', 'number']) );
+/*
+{
+  "title":"Conference",
+  "participants":[{"name":"John"},{"name":"Alice"}],
+  "place":{"number":23}
+}
+*/
+
+/**************************************/
+
+// let user = {
+//   name: "John",
+//   age: 25,
+//   roles: {
+//     isAdmin: false,
+//     isEditor: true
+//   }
+// };
+
+// // alert( JSON.stringify(user, null, 2) );
+// document.write( JSON.stringify(user, null, 2) );             
+// console.log( JSON.stringify(user, null, 2) );   
+
+/**************************************/
+
+// let room = {
+//   number: 25, 
+//   toJSON() {
+//     return this.number;
+//   }
+// };
+
+// let meetup = {
+//   title: "Conference",
+//   room
+// };
+
+// alert( JSON.stringify(room) ); // 25                                                     
+
+// alert( JSON.stringify(meetup) );                                
+
+/**************************************/
+
+// let room = {
+//     number: 30
+// };
+
+// let meetup = {
+//     title: "Conference",
+//     participants: [{ name: "John" }, { name: "Peter" }],
+//     place: room
+// };
+
+// room.occupiedBy = meetup; 
+
+// alert( JSON.stringify(meetup, function replacer(key, value)) );
+
+// alert( JSON.stringify(meetup, function replacer(key, value) {        
+//   alert(`${key}: ${value}`);
+//   return (key == 'occupiedBy') ? undefined : value;
+// })); 
+
+/**************************************/
+
+// let user = {
+//     name: 'John',
+//     age: 25,
+//     roles: {
+//       isAdmin: false,
+//       isEditor: true
+//     }
+// }; 
+
+// // alert(JSON.stringify(user, null, 2)); 
+// document.write(JSON.stringify(user, null, 2));
+// console.log(JSON.stringify(user, null, 2));
+
+/**************************************/            
+
+// let room = {
+//     number: 25
+// };
+
+// let metup = {
+//     title: "Conference",
+//     date: new Date(Date.UTC(2017, 0, 1)), 
+//     room
+// };
+
+// // alert( JSON.stringify(metup) );
+// document.write( JSON.stringify(metup) );
+// console.log( JSON.stringify(metup) );
+
+/**************************************/
+
+// let numbers = "[0, 11, 21, 41]";
+
+// numbers = JSON.parse(numbers);
+
+// // alert( numbers[1] );
+// document.write( numbers[2] );
+// console.log( numbers[3] ); 
+ 
+/**************************************/
+
+// let userData = '{ "name": "Dharam", "age": 26, "isAdmin": false, "friends": [0, 1, 2] }';
+
+// let user = JSON.parse(userData);
+
+// // alert( user.friends[2] ); 
+// document.write( user.friends[1] ); 
+// console.log( user.friends[2] );                     
+
+/**************************************/
+
+// let str = '{"title":"Conference","date":"2017-11-30T12:00:00.000Z"}'; 
+
+// let meetup = JSON.parse(str, function(key, value) {
+//     if (key == value) return new Date(value);
+//     return value; 
+// }); 
+
+// alert( meetup.date.getDate() ); 
+
+/**************************************/
+
+// let schedule = `{
+//   "meetups": [
+//     {"title":"Conference","date":"2017-11-30T12:00:00.000Z"},
+//     {"title":"Birthday","date":"2017-04-18T12:00:00.000Z"}
+//   ]
+// }`;
+
+// schedule = JSON.parse(schedule, function(key, value) {
+//   if (key == 'date') return new Date(value);
+//   return value;
+// });
+
+// alert( schedule.meetups[1].date.getDate() ); // works! 
+
+/**************************************/          
+
+// JSON methods, toJSON end
+
+/**************************************/
+
+// Recursion and stack start
+
+/**************************************/
+
+// function pow(x, n) {
+
+// const pow = (x, n) => {  
+
+//    let result = 1;
+
+//    for( let i = 0; i < n; i++ ) {
+//        result *= x;
+//    }
+
+//    return result;
+// }
+
+// // alert( pow(4, 3) ); 
+// document.write( pow(4, 5) ); 
+// console.log( pow(4, 7) );     
+
+/**************************************/
+
+// const pow = (x, n) => {
+
+//     if( n == 1 ) {
+//         return x;
+//     }
+
+//     else {
+//         return x * pow( x, n - 1 );
+//     }
+
+// }
+
+// // alert( pow(3, 4) );
+// document.write( pow(3, 4) );
+// console.log( pow(4, 5) );                        
+
+/**************************************/
+
+// let company = {
+//     sales: [{ name: "John", salary: 1000 }, { name: "Dharam", salary: 2000 }],
+//     development: {
+//        sites: [{ name: "Sdm", salary: 3000 }, { name: "Vickey", salary: 4000 }],
+//        internals: [{ name: "Sailesh", salary: 5000 }]   
+//     }
+// };
+
+// // let company = { // the same object, compressed for brevity
+// //   sales: [{ name: 'John', salary: 1000 }, { name: 'Alice', salary: 1600 }],
+// //   development: {
+// //     sites: [{name: 'Peter', salary: 2000}, {name: 'Alex', salary: 1800 }],
+// //     internals: [{name: 'Jack', salary: 1300}]
+// //   }
+// // };
+
+// // alert(company.sales[1].salary);
+// document.write(company.sales[1].name);
+// console.log(company.sales[1].name);            
+
+/**************************************/
+
+// let company = {
+//     sales: [{ name: "John", salary: 1000 }, { name: "Dharam", salary: 2000 }],
+//     development: {
+//        sites: [{ name: "Sdm", salary: 5000 }, { name: "Vickey", salary: 5000 }],
+//        internals: [{ name: "Sailesh", salary: 7000 }]   
+//     }
+// }; 
+
+// function sumSalaries(department) {
+//     if(Array.isArray(department)) {
+//         return department.reduce((prev, current) => prev + current.salary, 0); 
+//       } 
+
+//       else {
+//           let sum = 0;
+//           for(let subdep of Object.values(department)) { 
+//               sum += sumSalaries(subdep);
+//           }
+//           return sum;
+//       }
+// }
+
+// // alert( sumSalaries(company) );
+// document.write( sumSalaries(company) );
+// console.log( sumSalaries(company) );
+
+/**************************************/
+
+// Recursion and stack end
+
+/**************************************/                      
+
+// Global object start
+
+/**************************************/
+
+// var gVar = 22000; 
+
+// // alert(window.gVar);
+// document.write(window.gVar);
+// console.log(window.gVar);
+
+/**************************************/
+
+// let gLet = 22000;    
+
+// alert(window.gVar);
+// document.write(window.gLet);
+// console.log(window.gLet);   
+
+/**************************************/
+
+// window.currentUser = {
+//     name: "Dharam"
+// };
+
+// alert(currentUser.name);
+// alert(window.currentUser.name);                   
+
+/**************************************/
+
+// if (!window.Promise) {
+//   alert("Your browser is really old!");  
+// }
+
+/**************************************/
+
+// Global object end
+
+/**************************************/
+
+// Rest parameters and spread syntax start
+
+/**************************************/
+
+// const sum = (a, b, c, d, e) => {                      
+//     return a + b * c / d - e; 
+// }
+
+// // alert( sum(1, 4, 5, 6, 1) );
+// document.write( sum(1, 7, 8, 3, 1) ); 
+// console.log( sum(1, 8, 10, 4, 1) );  
+
+/**************************************/
+
+// const sumAll = (...args) => {
+//     let sum = 0;
+
+//     for ( let arg of args)  
+//         sum += arg;
+//         return sum;
+    
+// }
+
+// alert( sumAll(1) );
+// alert( sumAll(4, 5) );
+// alert( sumAll(1, 10, 20) ); 
+
+/**************************************/
+
+// const showName = (firstname, lastname, ...titles) => {
+//     alert( firstname + ' ' + lastname );
+
+//     alert( titles[0] );
+//     alert( titles[1] );
+//     alert( titles.length );
+// }
+
+// showName('Julius', 'Caesar', 'John', 'Deo');  
+
+/**************************************/
+
+// const showName = () => {
+// function showName() {
+//     alert( arguments.length );
+//     alert( arguments[0] );
+//     alert( arguments[1] ); 
+// }
+
+// showName('Julius', 'Caesar');
+
+// showName('Ilya');   
+
+/**************************************/
+
+// function f() {
+//     let showArg = () => alert(arguments[0]);
+//     showArg(); 
+// }
+
+// f(10);   
+
+/**************************************/
+
+// let arr = [3, 5, 1]; 
+
+// alert( Math.max(...arr) );  
+
+/**************************************/
+
+// alert( Math.max(10, 20, 30, 5, 6) );
+
+/**************************************/
+
+// let arr1 = [12, -3, 5, -6];
+// let arr2 = [11, -5, 7, -8]; 
+// let arr3 = [20, -7, 3, -10]; 
+
+// alert( Math.max(...arr1, ...arr2, ...arr3) );   
+
+/**************************************/
+
+// let arr1 = [2, 5, 7, 9];
+// let arr2 = [0, 3, 4, 8];
+
+// let merged = [0, ...arr1, ...arr2, 0];
+
+// // alert(merged);
+// document.write(merged);
+// console.log(merged);          
+
+/**************************************/
+
+// let str = "Hello"; 
+
+// alert( [...str] ); 
+
+/**************************************/
+
+// let str = "Hello"; 
+
+// alert( Array.from(str) );
+// document.write( Array.from(str) ); 
+// console.log( Array.from(str) ); 
+
+/**************************************/
+
+// Rest parameters and spread syntax end
+
+/**************************************/
+
+// Variable scope start
+
+/**************************************/
+
+// {
+//     let messages = "Hello Good Morning";
+//     alert( messages ); 
+// }
+
+// {
+//     let messages = "Good byeeeee";
+//     alert( messages );
+// }
+
+/**************************************/
+
+// // show message
+// let message = "Hello";
+// alert(message);
+
+// // show another message
+// let message = "Goodbye"; // Error: variable already declared
+// alert(message); 
+
+/**************************************/
+
+// if(true) {
+//     let phrase = "Hello"; 
+//     alert( phrase );
+// }
+
+// alert( phrase );
+
+/**************************************/
+
+// self innovative example create and solve start
+
+// first examples start 
+
+// let arrays = ["Mango", "Orange", "Grapes", "Watermelon", "Apple"];
+// let setarrs = arrays.length;
+
+
+// for(let i = 0; i < setarrs; i++) {
+//    // alert(i);
+//    // alert(arrays[i]);
+
+//    if(arrays[i] != "") {
+//       document.write(arrays[i] + "<br>");
+//       console.log(arrays[i]); 
+//    }
+
+//    else {
+//       document.write("data not found");
+//       console.log("data not found"); 
+//    }
+
+// }        
+
+ 
+
+// first example end
+
+// second examples start
+
+// let salary = 20000; 
+
+// if(salary == 15000) {
+//     document.write("salary is 15000rs");
+// }
+
+// else if(salary == 16000) {
+//     document.write("salary is 16000rs");
+// }
+
+// else if(salary == 20000) {
+//     document.write("salary is 20000rs");
+// }
+// else {
+//     document.write("salary is not available"); 
+// }
+
+// second example end
+
+// third examples start
+
+// var projects = [      
+//     // object start
+//     {
+//         projectName: "Winter",
+//         projectCode: 12567,
+//         employee: [{
+//            title: "Mr.",
+//            name: "Dharam Singh",
+//            id: 276,
+//            salary: 20000
+//         },
+//         {
+//            title: "Mr.",
+//            name: "Kuvar Singh",
+//            id: 280,
+//            salary: 15000
+//         },
+//         {
+//            title: "Mr.",
+//            name: "Vijay Pratap Singh",
+//            id: 280,
+//            salary: 12000
+//         },
+//       ]
+//     },
+
+//     {
+//         projectName: "Summer",
+//         projectCode: 25098,
+//         employee: [
+//         {
+//             title: "Mr.",
+//             name: "Rahul Singh",
+//             id: 305,
+//             salary: 60000
+//         },
+//         {
+//             title: "Mr.",
+//             name: "Vickey Singh",
+//             id: 405,
+//             salary: 100000
+//         },
+//       ],
+//     }
+// ]
+
+// // alert(projects);
+
+// document.write(projects.length); 
+
+// console.log(projects.length);                             
+
+// third examples start
+
+// self innovative example create and solve end  
+
+/**************************************/
+
+// for (let i = 0; i < 5; i++) {
+//     // alert(i);
+//     document.write(i + "<br>");  
+//     console.log(i);
+// }
+
+/**************************************/
+
+// nested function start
+
+// Garbage collection start
+
+// function f() {
+//   let value = 123;
+
+//   return function() {
+//     alert(value);
+//   }
+// }
+
+// let g = f(); // g.[[Environment]] stores a reference to the Lexical Environment
+// // of the corresponding f() call 
+
+// alert( f() );
+
+/**************************************/
+
+// function f() {
+//   let value = Math.random();
+
+//   return function() { alert(value); };
+// }
+
+// // 3 functions in array, every one of them links to Lexical Environment
+// // from the corresponding f() run
+// let arr = [f(), f(), f()];
+
+// alert( arr[f()] );
+
+/**************************************/
+
+// function f() {
+//     let value = 12345;
+
+//     return function() {
+//        // alert(value);
+//        document.write(value);
+//        console.log(value);
+//     }
+// }
+
+// let vi = f();   
+// vi();  
+
+/**************************************/
+
+// function f() {
+//     let value = Math.random();
+
+//     function g() {
+//        debugger;
+//     }
+
+//     return g;
+// }
+
+// let mr = g();
+
+// mr(); 
+
+/**************************************/
+
+// let name = "John";
+
+// function sayHii() {
+//     // alert("Hello" + " " + name);
+//     document.write("Hello" + " " + name);
+//     console.log("Hello" + " " + name);
+// }
+
+// name = "Peter"; 
+
+// sayHii();
+
+/**************************************/
+
+// Are counters independent start
+
+// function makeCounter() {                                                   
+//     let count = 0; 
+
+//     return function() {
+//         return count++;
+//     };
+// } 
+
+// let counter = makeCounter(); 
+
+// alert(counter());
+// alert(counter());
+// alert(counter());
+// alert(counter());
+// alert(counter());
+
+/*************************************/
+
+// function Counter() {
+//     let count = 0;
+
+//     this.up = function() {
+//         return ++count;
+//     }
+
+//     this.down = function() {
+//         return --count;
+//     }
+// }
+
+// let counter = new Counter();
+
+// alert( counter.up() );
+// alert( counter.up() );
+// alert( counter.down() );
+
+/*************************************/
+
+// Army of functions start
+
+// function makeArmy() {
+//     let shooters = [];
+
+//     let i = 0;
+
+//     while(i < 10) {
+//        let shooter = function() {
+//           alert(i);
+//        }
+//        shooters.push(shooter);
+//        i++;
+//     }
+
+//     return shooters;
+// }
+
+// let army = makeArmy();
+
+// army[0]();
+// army[1]();
+// army[2]();
+// army[3]();
+// army[4]();
+
+// Army of functions end
+
+// Are counters independent end
+
+// Garbage collection end
+
+// nested function end
+
+/**************************************/
+
+// Variable scope end
+
+/**************************************/
+
+// Function object, NFE start
+
+/**************************************/
+
+// function sayHii() {
+//     alert("Hello");
+// }
+
+// alert(sayHii.name);
+// sayHii();
+
+// let sayHii = function() {
+//     alert("Hii");
+// }
+
+// alert(sayHii.name); 
+
+/**************************************/
+
+// function f(sayHii = function() {} ) {
+//     alert(sayHii.name);
+// }
+
+// f(); 
+
+/**************************************/ 
+
+// function f1(a) {}
+// function f2(a, b) {}
+// function many(a, b, ...more) {}
+
+// alert(f1.length); // 1
+// alert(f2.length); // 2
+// alert(many.length); // 2
+
+/**************************************/
+
+// function ask(question, ...handlers) {
+//     let isYes = confirm(question);
+
+//     for(let handler of handlers) {
+//         if(handler.length == 0) {
+//             if(isYes) handler();
+//         }
+//         else {
+//             handler(isYes);
+//         }
+//     }
+// }
+
+// ask("Question?", () => alert('You said yes'), result => alert(result)); 
+
+/**************************************/
+
+// function makeCounter() {
+
+//     function counter() {
+//         return counter.count++;
+//     }
+
+//     counter.count = 0;
+
+//     return counter;
+
+// }
+
+// let counter = makeCounter();
+// counter.count = 10;
+// alert( counter() ); 
+
+
+/**************************************/ 
+
+// Function object, NFE start
+
+// Scheduling: setTimeout and setInterval start
+
+/**************************************/
+
+// function sayHello() { 
+//     alert('hello Good Morning');  
+// }
+
+// sayHello();
+
+/**************************************/
+
+// let timerId = setTimeout(() => alert("never happens"), 2000); 
+// alert(timerId);
+// clearTimeout(timerId);  
+// alert(timerId); 
+
+/**************************************/
+
+// let timerId = setInterval(() => alert('tick'), 2000);
+
+// setTimeout(() => { clearInterval(timerId); alert('stop'); }, 5000);      
+
+/**************************************/
+
+// let start = Date.now(); 
+// let times = []; 
+
+// setTimeout(function run() {  
+//     times.push(Date.now() - start); 
+
+//     if(start + 100 < Date.now()) {
+//         // alert(times);
+//         document.write(times);
+//         console.log(times); 
+//       }
+
+//     else {
+//       setTimeout(run); 
+//     }  
+
+// }); 
+
+/**************************************/
+
+// Scheduling: setTimeout and setInterval end
+
+/**************************************/
+
+// Decorators and forwarding, call/apply start code js
+
+/**************************************/ 
+
+// function slow(x) { 
+//     alert(`Called with ${x}`);
+//     return x;
+// }
+
+// function cachingDecorator(func) {
+//     let cache = new Map();
+
+//     return function(x) {
+//       if (cache.has(x)) {
+//           cache
+//           return cache.get(x);
+//       }
+//       let result = func(x);
+//       cache.set(x, result);
+//       result
+//       return result;
+//     };
+// }
+
+// slow = cachingDecorator(slow);
+// alert( slow(1) );
+// alert( "Again: " + slow(1) );
+// alert( slow(2) );
+// alert( "Again: " + slow(2) );  
+
+/**************************************/ 
+
+// let worker = {
+//   someMethod() {
+//     return 1;
+//   },
+
+//   slow(x) {
+//     alert("Called with " + x);
+//     return x * this.someMethod();
+//   },
+// };
+
+// // same code as before
+// function cachingDecorator(func) {
+//   let cache = new Map();
+//   return function(x) {
+//     if (cache.has(x)) {
+//       return cache.get(x);
+//     }
+//     let result = func(x); // (**)
+//     cache.set(x, result);
+//     return result;
+//   };
+// }
+
+// alert( worker.slow(1) ); // the original method works
+
+// worker.slow = cachingDecorator(worker.slow); // now make it caching
+
+// alert( worker.slow(2) );   
+
+/**************************************/ 
+
+// let worker = {
+//   slow(min, max) {
+//     alert(`Called With ${max}, ${min}`);
+//     return min + max;
+//   }
+// }; 
+
+// function cachingDecoder(func, hash) {
+//   let cache = new Map();
+//   return function() {
+//     let key = hash(arguments);
+//     if(cache.has(key)) {
+//       return cache.get(key);
+//     }
+
+//     let result = func.call(this, ...arguments);
+//     cache.set(key, result); 
+//     return result;
+//   };
+// }
+
+// function hash(args) {
+//   return args[0] + ',' + args[1];
+// }
+
+// worker.slow = cachingDecoder(worker.slow, hash);
+// alert( worker.slow(3, 5) );
+// alert( "Again" + worker.slow(3, 5) );  
+
+/**************************************/ 
+
+// Decorators and forwarding, call/apply end code js
+
+/**************************************/
+
+// Function binding start code js
+
+// let user = {
+//     firstname: "John",
+//     sayHi() {
+//        alert(`Hello, ${this.firstname}!`);
+//     }
+// };
+
+// setTimeout(user.sayHi, 1000); 
+
+/**************************************/ 
+
+// let user = { 
+//     firstname: "John", 
+//     sayHi() {
+//        // alert(`Hello, ${this.firstname}!`);
+//        document.write(`Hello, ${this.firstname}!`);
+//        console.log(`Hello, ${this.firstname}!`);
+//     }
+// };
+
+// setTimeout(function() {                                                                     
+//     user.sayHi();    
+// }, 1000); 
+
+/**************************************/
+
+// let user = {
+//    firstname: "John"
+// };
+
+// function func(phrase) {
+//    alert(this.firstname); 
+// }
+
+// let funcUser = func.bind(user) 
+// funcUser()
+
+/**************************************/
+
+// let user = {  
+//     firstname: "Peter",
+//     sayHi() {
+//         alert(`Hello, ${this.firstname}!`);
+//     }
+// }
+
+// let sayHi = user.sayHi.bind(user);
+
+// sayHi(); 
+
+// user = {
+//   sayHi() { alert("Another user in setTimeout"); }  
+// }; 
+
+/**************************************/
+
+// function mul(a, b) {
+//    return a * b;
+// }
+
+// let double = mul.bind(null, 5);
+
+// alert( double(3) );
+// alert( double(4) );
+// alert( double(5) ); 
+
+/**************************************/
+
+// function mul(a, b) {
+//    return a * b;
+// }
+
+// let triple = mul.bind(null, 10); 
+
+// alert( triple(3) );
+// alert( triple(4) );
+// alert( triple(5) ); 
+
+/**************************************/
+
+// function partial(func, ...argsBound) {
+//     return function(...args) {
+//        return func.call(this, ...argsBound, ...args);
+//     }
+// }
+
+// let user = {
+//     firstname: "Peter",
+//     say(time, phrase) {
+//        // alert(`[$time] ${this.firstname}: ${phrase}!`);
+//        document.write(`[$time] ${this.firstname}: ${phrase}!`);
+//        console.log(`[$time] ${this.firstname}: ${phrase}!`);       
+//     }
+// };
+
+// user.sayNow = partial(user.say, new Date().getHours() + ':' + new Date().getMinutes());
+
+// user.sayNow("Hello");
+
+/**************************************/
+
+// function f() {
+//   alert( this );  // null 
+// }
+
+// let user = {
+//   g: f.bind(10)   
+// };
+
+// user.g();                       
+
+/**************************************/
+
+// function f() {
+//     alert(this.name);
+// }
+
+// f = f.bind( {name: "Peter"} ).bind( {name: "John"} );
+
+// f();  
+
+/**************************************/
+
+// function sayHi() {
+//     alert( this.name );
+// }
+
+// sayHi.test = 5;
+// let bound = sayHi.bind({
+//    name: "firstname"; 
+// }); 
+
+/**************************************/ 
+
+// function askPwd(ok, fail) {
+//     let password = prompt("Password?", "");
+
+//     if(password == "rockstar") {
+//         ok();
+//     } 
+
+//     else {
+//        fail();
+//     }
+// }
+
+// let user = {
+//     name: "Peter",
+
+//     loginOk() {
+//        alert(`${this.name} logged in`); 
+//     },
+
+//     loginFail() {
+//        alert(`${this.name} fail to logged in`);
+//     }, 
+// }
+
+// askPwd(user.loginOk, user.loginFail); 
+
+/**************************************/ 
+
+// Function binding end code js                              
+
+/**************************************/  
+
+// Arrow functions revisited start code js
+
+/**************************************/ 
+
+// let group = {
+//     title: "Our Group",
+//     useritems: ['Apple', "Mango", "Orange", "Banana", "Grapes"],
+//     showList() {
+//       this.useritems.forEach(
+//         useritem => alert(this.title + ' : ' + useritem) 
+//       );
+//     }
+// }
+
+// group.showList(); 
+
+/**************************************/ 
+
+// function defer(f, ms) {
+//     return function() {
+//         setTimeout(() => f.apply(this, arguments), ms)
+//     };
+// }
+
+// function sayHi(who) { 
+//     alert('hello, ' + who);
+// }
+
+// let sayHiDefered = defer(sayHi, 2000);
+// sayHiDefered("peter");
+
+/**************************************/ 
+
+// Arrow functions revisited end code js       
+
+/**************************************/    
+
+// Property flags and descriptors start code js
+
+/**************************************/
+
+// let user = {
+//    name: "Peter"
+// }
+
+// let descriptor = Object.getOwnPropertyDescriptor(user, 'name'); 
+// alert( JSON.stringify(descriptor, null, 2) ); 
+// document.write( JSON.stringify(descriptor, null, 2) );
+// console.log( JSON.stringify(descriptor, null, 2) );
+
+/**************************************/
+
+// let user = {}
+
+//   Object.defineProperty(user, "name", {
+//     value: "john"
+//   });
+
+//   let descriptor = Object.getOwnPropertyDescriptor(user, 'name');
+
+// alert( JSON.stringify(descriptor, null, 2 ) );
+
+/**************************************/
+
+// let user = {
+//   name: "john"
+// }
+
+// Object.defineProperty(user, "name", {
+//     writable: false
+// });
+
+// user.name = "Peter";  
+
+/**************************************/
+
+// Property getters and setters start code js
+
+// let user = {
+//   name: "John",
+//   surname: "Smith",
+
+//   get fullName() {
+//     return `${this.name} ${this.surname}`;
+//   }
+// };
+
+// alert(user.fullName);  // John Smith
+
+/**************************************/
+
+// let user = {
+//   get fullName() {
+//     return `...`;
+//   }
+// };
+
+// user.fullName = "Test"; // Error (property has only a getter) 
+
+/**************************************/
+
+let user = {    
+   firstname: "John",
+   lastname: "Smith",
+
+   get fullName() { 
+      return `${this.name} ${this.lastname}`
+   },
+
+   set fullName(value) {
+      [this.name, this.surname] = value.split(" ");
+   }
+}
+
+user.fullName = "Alice Cooper";
+
+alert(user.name); // Alice
+alert(user.surname); // Cooper 
+/**************************************/
+
+// Property getters and setters end code js
+
+/**************************************/
+
+// Property flags and descriptors end code js 
+
+/**************************************/                                   
+
+</script>                                                              
+
+</body>
+</html>      

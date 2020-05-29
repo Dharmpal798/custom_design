@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Animation</title>     
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">   
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/custom.css"> 
+  <link rel="stylesheet" href="css/animate.css"> 
+
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css"> -->
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <!-- first example cdn links start -->  
+
+  <link rel='stylesheet' href='css/twilight.css'>
+
+  <link rel="stylesheet" type="text/css" href="css/micron.min.css">
+
+  <!-- first example cdn links end --> 
+
+ <!-- second example cdn links -->
+
+ <link rel='stylesheet' href='css/reboundgen.css'>
+
+ <!-- third example cdn links --> 
+ 
+ <link rel="stylesheet" type="text/css" href="css/hover.css">   
+
+
+ <!-- first example css --> 
+
+
+ <style>  
+ 	
+.contents .button { 
+  text-align: center;
+  cursor: pointer;
+  padding: 1rem 3rem;
+  display: inline-block;
+  border-radius: 3px;
+  margin: 1rem;
+  text-decoration: none;
+  font-family: system-ui;
+  font-size: 16px;
+  text-transform: uppercase;
+  color: #fff !important;
+  background-image: linear-gradient(-45deg, #f761a1 0, #8c1bab 100%);
+  box-shadow: 0 3px 13px 0 rgba(14, 9, 73, 0.2),
+    0 11px 21px 0 rgba(255, 166, 220, 0.004);
+}
+
+</style>
+
+ <!-- second example css --> 
+
+<style>
+
+article.type-system-sans {
+	 text-align: left;
+}
+ article.type-system-sans .type {
+	 border-bottom: 1px solid;
+	 display: inline-block;
+	 font-family: "Titillium Web", sans-serif;
+	 font-size: 0.7em;
+	 font-weight: 900;
+	 letter-spacing: 1px;
+	 margin-bottom: 2em;
+	 padding: 0.1em 0;
+	 text-align: left;
+	 text-transform: uppercase;
+}
+ article.type-system-sans h1 {
+	 font-family: "Titillium Web", sans-serif;
+	 font-size: 2em;
+	 font-weight: 600;
+	 margin-bottom: 0.6em;
+}
+ article.type-system-sans .hero h1 {
+	 font-family: "Titillium Web", sans-serif;
+	 font-size: 4em;
+	 font-weight: 600;
+	 margin-bottom: 0.4em;
+	 margin-top: 0.4em;
+}
+ article.type-system-sans h2 {
+	 font-family: "PT Sans", sans-serif;
+	 font-size: 1.2em;
+	 font-weight: 400;
+	 line-height: 1.4em;
+	 margin-bottom: 1.2em;
+}
+ article.type-system-sans code {
+	 white-space: nowrap;
+	 font-family: monaco;
+	 background: #f7f7f7;
+	 border: 1px solid #e0e0e0;
+	 border-radius: 7.5px;
+	 padding: 0.1em 0.4em;
+	 font-size: 0.65em;
+	 font-style: normal;
+}
+ article.type-system-sans h3 {
+	 font-family: "Titillium Web", sans-serif;
+	 font-size: 1em;
+	 font-weight: 700;
+	 text-transform: uppercase;
+	 line-height: 1.4em;
+	 margin-bottom: 0.5em;
+}
+ article.type-system-sans p.date {
+	 color: rgba(0, 0, 0, .4);
+	 font-family: "PT Sans", sans-serif;
+	 font-size: 0.8em;
+	 margin-bottom: 0.5em;
+}
+ article.type-system-sans p {
+	 font-family: "PT Sans", sans-serif;
+	 font-weight: 300;
+	 letter-spacing: 1;
+	 margin-bottom: 1.5em;
+}
+ article.type-system-sans p span {
+	 font-family: "PT Sans", sans-serif;
+	 font-weight: 600;
+	 font-size: 0.8em;
+	 text-transform: uppercase;
+}
+ article.type-system-sans hr {
+	 width: 3em;
+}
+ article.type-system-sans a.read-more {
+	 display: inline-block;
+	 font-family: "PT Sans", sans-serif;
+	 font-weight: 700;
+	 font-size: 0.8em;
+	 text-transform: uppercase;
+	 margin-left: 0.2em;
+	 position: relative;
+}
+ article.type-system-sans a.read-more span {
+	 position: absolute;
+	 font-size: 1.7em;
+	 top: -2px;
+	 right: -10px;
+}
+ article.type-system-sans p.author {
+	 font-family: "PT Sans", sans-serif;
+	 font-style: italic;
+}
+ .staggered :nth-child(2) {
+	 animation-delay: 0.5s;
+	 -webkit-animation-delay: 0.5s;
+	 -ms-animation-delay: 0.5s;
+	 -o-animation-delay: 0.5s;
+	 -moz-animation-delay: 0.5s;
+}
+ .staggered :nth-child(3) {
+	 animation-delay: 1.5s;
+	 -webkit-animation-delay: 1.5s;
+	 -ms-animation-delay: 1.5s;
+	 -o-animation-delay: 1.5s;
+	 -moz-animation-delay: 1.5s;
+}
+ .staggered :nth-child(4) {
+	 animation-delay: 2s;
+	 -webkit-animation-delay: 2s;
+	 -ms-animation-delay: 2s;
+	 -o-animation-delay: 2s;
+	 -moz-animation-delay: 2s;
+}
+ .staggered :nth-child(5) {
+	 animation-delay: 2.5s;
+	 -webkit-animation-delay: 2.5s;
+	 -ms-animation-delay: 2.5s;
+	 -o-animation-delay: 2.5s;
+	 -moz-animation-delay: 2.5s;
+}
+ .staggered :nth-child(6) {
+	 animation-delay: 3s;
+	 -webkit-animation-delay: 3s;
+	 -ms-animation-delay: 3s;
+	 -o-animation-delay: 3s;
+	 -moz-animation-delay: 3s;
+}
+ .staggered :nth-child(7) {
+	 animation-delay: 3.5s;
+	 -webkit-animation-delay: 3.5s;
+	 -ms-animation-delay: 3.5s;
+	 -o-animation-delay: 3.5s;
+	 -moz-animation-delay: 3.5s;
+}
+ div.hero-container {
+	 background-color: #eee;
+	 padding-top: 10px;
+	 padding-bottom: 10px;
+	 margin-bottom: 10px;
+}
+ div.hero {
+	 min-width: 320px;
+	 max-width: 600px;
+	 margin-left: auto;
+	 margin-right: auto;
+	 padding-left: 10px;
+	 padding-right: 10px;
+}
+ div.animations-container {
+	 margin-left: auto;
+	 margin-right: auto;
+	 max-width: 860px;
+}
+ div.instructions-container {
+	 margin-left: auto;
+	 margin-right: auto;
+	 margin-top: 50px;
+	 max-width: 860px;
+}
+ div.example-container {
+	 position: relative;
+	 float: left;
+	 width: 31.5%;
+	 -webkit-perspective: 100px;
+	 -ms-perspective: 100px;
+	 -moz-perspective: 100px;
+	 -o-perspective: 100px;
+	 perspective: 100px;
+	 border: 1px solid #ccc;
+	 margin-right: 10px;
+	 margin-bottom: 10px;
+	 padding-bottom: 30px;
+}
+ div.animation-example {
+	 margin-left: auto;
+	 width: 60px;
+	 height: 50px;
+	 margin-right: auto;
+	 margin-top: 20px;
+	 border-radius: 10px;
+}
+ div.animations-container div.example-container:nth-child(5n+0) div.animation-example {
+	 background-color: #1abc9c;
+}
+ div.animations-container div.example-container:nth-child(5n+1) div.animation-example {
+	 background-color: #2980b9;
+}
+ div.animations-container div.example-container:nth-child(5n+2) div.animation-example {
+	 background-color: #e74c3c;
+}
+ div.animations-container div.example-container:nth-child(5n+3) div.animation-example {
+	 background-color: #e67e22;
+}
+ div.animations-container div.example-container:nth-child(5n+4) div.animation-example {
+	 background-color: #27ae60;
+}
+ div.animations-container div.example-container:nth-child(5n+5) div.animation-example {
+	 background-color: #8e44ad;
+}
+ 
+
+/* end code css */
+
+
+
+ </style>
+
+ <style>
+
+
+ /* third examples css */
+
+ [class^="hvr-"] {
+    margin: .4em;
+    padding: 1em;
+    cursor: pointer;
+    background: #e1e1e1;
+    text-decoration: none;
+    color: #666;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-font-smoothing: antialiased;
+}
+
+</style>
+
+  </head>
+
+
+
+  <body>
+
+
+<div class="first_design">
+	<div class="container">
+		<div class="row">
+
+			<!-- first example test -->
+			<div class="col-lg-12 col-12 mb-5 overflow-hidden">            
+				<div class="contents">                                   
+			      	<a href="#" class="button" data-micron="bounce">Bounce</a>
+					<a href="#" class="button" data-micron="groove">Groove</a>
+					<a href="#" class="button" data-micron="squeeze">Squeeze</a>
+					<a href="#" class="button" data-micron="flicker">Flicker</a>
+					<a href="#" class="button" data-micron="tada">Ta da</a>
+					<a href="#" class="button" data-micron="pop">Pop</a>
+			    </div>   
+			</div> 
+
+			<div class="clearfix"></div> 
+			<br><br>
+
+			<!-- second example test -->
+
+			<div class="col-12 col-lg-12 overflow-hidden">
+				<div class="animations-container">
+				  <div class="example-container">
+				    <code>.bounceInRight</code>
+				    <div class="animation-example" data-anim="bounceInRight"></div>
+				  </div>
+				  <div class="example-container">
+				    <code>.bounceInLeft</code>
+				    <div class="animation-example" data-anim="bounceInLeft"></div>
+				  </div>
+				  <div class="example-container">
+				    <code>.bounceInDown</code>
+				    <div class="animation-example" data-anim="bounceInDown"></div>
+				  </div>
+				  <div class="example-container">
+				    <code>.bounceInDrop</code>
+				    <div class="animation-example" data-anim="bounceInDrop"></div>
+				  </div>
+				  <div class="example-container">
+				    <code>.glideInRight</code>
+				    <div class="animation-example" data-anim="glideInRight"></div>
+				  </div>
+				  <div class="example-container">
+				    <code>.glideInLeft</code>
+				    <div class="animation-example" data-anim="glideInLeft"></div>
+				  </div>
+				  <div class="example-container">
+				    <code>.glideInUp</code>
+				    <div class="animation-example" data-anim="glideInUp"></div>
+				  </div>
+				  <div class="example-container">
+				    <code>.glideInDown</code>
+				    <div class="animation-example" data-anim="glideInDown"></div>
+				  </div>
+				  <div class="example-container">
+				    <code>.bounceInScale</code>
+				    <div class="animation-example" data-anim="bounceInScale"></div>
+				  </div>
+				  <div class="example-container">
+				    <code>.bounceInScale2</code>
+				    <div class="animation-example" data-anim="bounceInScale2"></div>
+				  </div>
+				  <div class="example-container">
+				    <code>.springScaleOut</code>
+				    <div class="animation-example" data-anim="springScaleOut"></div>
+				  </div>
+				  <div class="example-container">
+				    <code>.hoverJiggle</code>
+				    <div class="animation-example" data-anim="hoverJiggle"></div>
+				  </div>
+				  <div class="example-container">
+				    <code>.hoverJiggle2</code>
+				    <div class="animation-example" data-anim="hoverJiggle2"></div>
+				  </div>
+				  <div class="example-container">
+				    <code>.twirlIn</code>
+				    <div class="animation-example" data-anim="twirlIn"></div>
+				  </div>
+				  <div class="example-container">
+				    <code>.rubberband</code>
+				    <div class="animation-example" data-anim="rubberband"></div>
+				  </div>
+				  <div class="example-container">
+				    <code>.jellyfall</code>
+				    <div class="animation-example" data-anim="jellyfall"></div>
+				  </div>
+				  <div class="example-container">
+				    <code>.jellyfall2</code>
+				    <div class="animation-example" data-anim="jellyfall2"></div>
+				  </div>
+				  <div class="example-container">
+				    <code>.slideInRight</code>
+				    <div class="animation-example" data-anim="slideInRight"></div>
+				  </div>
+				  <div class="example-container">
+				    <code>.slideInLeft</code>
+				    <div class="animation-example" data-anim="slideInLeft"></div>
+				  </div>
+				  <div class="example-container">
+				    <code>.flipInLeft</code>
+				    <div class="animation-example" data-anim="flipInLeft"></div>
+				  </div>
+				  <div class="example-container">
+				    <code>.flipInRight</code>
+				    <div class="animation-example" data-anim="flipInRight"></div>
+				  </div>
+				  <div class="example-container">
+				    <code>.flipInBottom</code>
+				    <div class="animation-example" data-anim="flipInBottom"></div>
+				  </div>
+				  <div class="example-container">
+				    <code>.flipInTop</code>
+				    <div class="animation-example" data-anim="flipInTop"></div>
+				  </div>
+				  <div class="example-container">
+				    <code>.kitchenSink</code>
+				    <div class="animation-example" data-anim="kitchenSink"></div>
+				  </div>
+				  <div class="example-container">
+				    <code>.flyInBottom</code>
+				    <div class="animation-example" data-anim="flyInBottom"></div>
+				  </div>
+				  <div class="example-container">
+				    <code>.flyInLeft</code>
+				    <div class="animation-example" data-anim="flyInLeft"></div>
+				  </div>
+				  <div class="example-container">
+				    <code>.flyInRight</code> 
+				    <div class="animation-example" data-anim="flyInRight"></div>
+				  </div>
+				</div>
+			</div>           
+
+			<div class="clearfix"></div> 
+			<br><br>
+
+			<!-- third example start -->
+
+		<div class="col-12 col-lg-12 mt-5 mb-5 overflow-hidden">             
+			<div id="effects" class="effects">
+
+				  <h2>2D Transitions</h2>
+
+				  <a href="#" class="hvr-grow">Grow</a>
+				  <a href="#" class="hvr-shrink">Shrink</a>
+				  <a href="#" class="hvr-pulse">Pulse</a>
+				  <a href="#" class="hvr-pulse-grow">Pulse Grow</a>
+				  <a href="#" class="hvr-pulse-shrink">Pulse Shrink</a>
+				  <a href="#" class="hvr-push">Push</a>
+				  <a href="#" class="hvr-pop">Pop</a>
+				  <a href="#" class="hvr-bounce-in">Bounce In</a>
+				  <a href="#" class="hvr-bounce-out">Bounce Out</a>
+				  <a href="#" class="hvr-rotate">Rotate</a>
+				  <a href="#" class="hvr-grow-rotate">Grow Rotate</a>
+				  <a href="#" class="hvr-float">Float</a>
+				  <a href="#" class="hvr-sink">Sink</a>
+				  <a href="#" class="hvr-bob">Bob</a>
+				  <a href="#" class="hvr-hang">Hang</a>
+				  <a href="#" class="hvr-skew">Skew</a>
+				  <a href="#" class="hvr-skew-forward">Skew Forward</a>
+				  <a href="#" class="hvr-skew-backward">Skew Backward</a>
+				  <a href="#" class="hvr-wobble-horizontal">Wobble Horizontal</a>
+				  <a href="#" class="hvr-wobble-vertical">Wobble Vertical</a>
+				  <a href="#" class="hvr-wobble-to-bottom-right">Wobble To Bottom Right</a>
+				  <a href="#" class="hvr-wobble-to-top-right">Wobble To Top Right</a>
+				  <a href="#" class="hvr-wobble-top">Wobble Top</a>
+				  <a href="#" class="hvr-wobble-bottom">Wobble Bottom</a>
+				  <a href="#" class="hvr-wobble-skew">Wobble Skew</a>
+				  <a href="#" class="hvr-buzz">Buzz</a>
+				  <a href="#" class="hvr-buzz-out">Buzz Out</a>
+				  <a href="#" class="hvr-forward">Forward</a>
+				  <a href="#" class="hvr-backward">Backward</a>
+
+				  <h2>Background Transitions</h2>
+
+				  <a href="#" class="hvr-fade">Fade</a>
+				  <a href="#" class="hvr-back-pulse">Back Pulse</a>
+				  <a href="#" class="hvr-sweep-to-right">Sweep To Right</a>
+				  <a href="#" class="hvr-sweep-to-left">Sweep To Left</a>
+				  <a href="#" class="hvr-sweep-to-bottom">Sweep To Bottom</a>
+				  <a href="#" class="hvr-sweep-to-top">Sweep To Top</a>
+				  <a href="#" class="hvr-bounce-to-right">Bounce To Right</a>
+				  <a href="#" class="hvr-bounce-to-left">Bounce To Left</a>
+				  <a href="#" class="hvr-bounce-to-bottom">Bounce To Bottom</a>
+				  <a href="#" class="hvr-bounce-to-top">Bounce To Top</a>
+				  <a href="#" class="hvr-radial-out">Radial Out</a>
+				  <a href="#" class="hvr-radial-in">Radial In</a>
+				  <a href="#" class="hvr-rectangle-in">Rectangle In</a>
+				  <a href="#" class="hvr-rectangle-out">Rectangle Out</a>
+				  <a href="#" class="hvr-shutter-in-horizontal">Shutter In Horizontal</a>
+				  <a href="#" class="hvr-shutter-out-horizontal">Shutter Out Horizontal</a>
+				  <a href="#" class="hvr-shutter-in-vertical">Shutter In Vertical</a>
+				  <a href="#" class="hvr-shutter-out-vertical">Shutter Out Vertical</a>
+
+				  <h2>Border Transitions</h2>
+
+				  <a href="#" class="hvr-border-fade">Border Fade</a>
+				  <a href="#" class="hvr-hollow">Hollow</a>
+				  <a href="#" class="hvr-trim">Trim</a>
+				  <a href="#" class="hvr-ripple-out">Ripple Out</a>
+				  <a href="#" class="hvr-ripple-in">Ripple In</a>
+				  <a href="#" class="hvr-outline-out">Outline Out</a>
+				  <a href="#" class="hvr-outline-in">Outline In</a>
+				  <a href="#" class="hvr-round-corners">Round Corners</a>
+				  <a href="#" class="hvr-underline-from-left">Underline From Left</a>
+				  <a href="#" class="hvr-underline-from-center">Underline From Center</a>
+				  <a href="#" class="hvr-underline-from-right">Underline From Right</a>
+				  <a href="#" class="hvr-reveal">Reveal</a>
+				  <a href="#" class="hvr-underline-reveal">Underline Reveal</a>
+				  <a href="#" class="hvr-overline-reveal">Overline Reveal</a>
+				  <a href="#" class="hvr-overline-from-left">Overline From Left</a>
+				  <a href="#" class="hvr-overline-from-center">Overline From Center</a>
+				  <a href="#" class="hvr-overline-from-right">Overline From Right</a>
+
+				  <h2>Shadow and Glow Transitions</h2>
+
+				  <a href="#" class="hvr-shadow">Shadow</a>
+				  <a href="#" class="hvr-grow-shadow">Grow Shadow</a>
+				  <a href="#" class="hvr-float-shadow">Float Shadow</a>
+				  <a href="#" class="hvr-glow">Glow</a>
+				  <a href="#" class="hvr-shadow-radial">Shadow Radial</a>
+				  <a href="#" class="hvr-box-shadow-outset">Box Shadow Outset</a>
+				  <a href="#" class="hvr-box-shadow-inset">Box Shadow Inset</a>
+
+				  <h2>Speech Bubbles</h2>
+
+				  <a href="#" class="hvr-bubble-top">Bubble Top</a>
+				  <a href="#" class="hvr-bubble-right">Bubble Right</a>
+				  <a href="#" class="hvr-bubble-bottom">Bubble Bottom</a>
+				  <a href="#" class="hvr-bubble-left">Bubble Left</a>
+				  <a href="#" class="hvr-bubble-float-top">Bubble Float Top</a>
+				  <a href="#" class="hvr-bubble-float-right">Bubble Float Right</a>
+				  <a href="#" class="hvr-bubble-float-bottom">Bubble Float Bottom</a>
+				  <a href="#" class="hvr-bubble-float-left">Bubble Float Left</a>
+
+				  <h2>Curls</h2>
+
+				  <a href="#" class="hvr-curl-top-left">Curl Top Left</a>
+				  <a href="#" class="hvr-curl-top-right">Curl Top Right</a>
+				  <a href="#" class="hvr-curl-bottom-right">Curl Bottom Right</a>
+				  <a href="#" class="hvr-curl-bottom-left">Curl Bottom Left</a>
+				</div>
+
+			</div>
+
+		</div>
+	</div>
+</div>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script> 
+ 
+<script src="js/wow.js"></script>
+
+<script src="js/reboudgem.js"></script> 
+
+<!-- first example js -->
+
+<script src="js/micron.min.js"></script>
+
+<script>
+    new WOW().init(); 
+</script>
+
+<script> 
+	$(".animation-example").on("mouseover", function() {
+	  // alert('hiiiii');
+	  var anim = $(this).attr("data-anim");
+	  $(this).removeClass(anim);
+	  $(this).addClass(anim);
+
+	  $(this).one(
+	    "webkitAnimationEnd oanimationend MSAnimationEnd animationend",
+	    function(e) {
+	      // code to execute after transition ends     
+	      $(this).removeClass(anim); 
+	    }
+	  );
+	});
+
+</script>
+
+<script>
+  window.console = window.console || function(t) {};
+</script>
+
+<script>
+	
+
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+	
+</script>
+  	
+  </body>
+
+</html>
+
+
+

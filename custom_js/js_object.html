@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Custom Javascript</title>
+  <meta charset="utf-8">
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> 
+
+  <style> 
+
+  body {                                           
+  	text-align: center; 
+  	/*padding-top: 50px;*/ 
+  }
+      
+.first_design {
+
+}
+
+  </style>
+  
+</head>
+<body>
+
+<div class="first_design">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-12">
+                <h1 id="demo_loop"></h1>
+                <br><br>
+                <p id="demo_loops"></p> 
+            </div>
+
+            <div class="col-lg-6 col-12">  
+                <p id="demo2"></p> 
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- <script src="js/jquery.min.js"></script> 
+<script src="js/popper.min.js"></script> 
+<script src="js/bootstrap.min.js"></script>  -->                                            
+
+<script> 
+
+// js object features                                            
+    
+// var person = {
+// 	Firstname: "Dharam",
+// 	Lastname: "Singh",
+// 	Age: 26,
+// 	Gender: "male",
+// 	Profile: "Ui Developer",
+// 	get Fullname() {
+// 		return this.Firstname + " " + this.Lastname;
+// 	}
+// }                      
+
+// document.write(person.Fullname); 
+
+
+// JavaScript Object Constructors
+
+function son(first, last, age, gender) { 
+	this.firstName = first;
+	this.lastName = last;
+	this.age = age;
+	this.Gender = gender;
+}
+
+// create object
+var myFather = new son("Awadhesh", "Singh", 50, "male");
+var myMother = new son("Sushma", "Singh", 48, "female");
+
+// Add a name method to first object
+
+myFather.name = function () {
+	return this.firstName + " " + this.lastName; 
+}
+
+// Display age
+document.write("my father name is" + " " + myFather.firstName + " " + "my mother name is" + " " + myMother.firstName);
+
+document.write("<br> <br>"); 
+
+document.write(myFather.name()); 
+
+document.write("<br> <br>");
+document.write("<br> <br>");
+
+function per(first, last, age, gender) { 
+	this.firstName = first;
+	this.lastName = last;
+	this.age = age;
+	this.Gender = gender;
+	this.changeName = function(name) {
+		this.lastName = name;
+	}
+}
+
+// create object
+var myFather = new per("Awadhesh", "Singh", 50, "male");
+var myMother = new per("Sushma", "Singh", 48, "female");
+
+// myFather changeName is
+
+myMother.changeName("Rajpoot"); 
+
+document.write(myMother.firstName + " " + myMother.lastName); 
+
+</script> 
+
+</body>
+</html>
+
+
+<!-- Zumen Work Report:
+
+1). Working on Home page redesign. (6 hours) 
+
+2). Working on Features page redesign. (8 hours).
+
+3). Working on Solution page redesign. (6 hours).
+
+4). Working on Leadership page redesign. (1 hours).  
+
+5). Working on Career page redesign. (1 hours). 
+
+6). Working on Contact Us page redesign. (2 hours).
+
+zumenPurchase
+
+1). Working on Home page redesign. (4 hours). 
+
+2). Working on Pricing page changes text and images. (2 hours).  -->

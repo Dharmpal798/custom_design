@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Grid Layout</title>  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">   
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/custom.css">
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> 
+
+  <style>
+    
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  background-color: #2196F3;
+  padding: 10px;
+}
+
+.grid-item {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+}
+
+/*grid item start code css*/
+
+.grid-item-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto;
+  grid-gap: 10px;
+  background-color: #2196F3;
+  padding: 10px;
+}
+
+.grid-item-container > div {
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  padding: 20px 0;
+  font-size: 30px;
+}
+
+.grid-item-container .item1 { 
+  grid-column: 1 / 5;
+}
+
+.grid-row-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto;
+  grid-gap: 10px;
+  background-color: #2196F3;
+  padding: 10px;
+}
+
+.grid-row-container > div {
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  padding: 20px 0;
+  font-size: 30px;
+}
+
+.grid-row-container .item1 {            
+  /*grid-row: 1 / 4;*/
+  /*grid-row: 1 / span 3;             */
+}
+
+.grid-row-container .item8 {
+  /*grid-area: 1 / 2 / 5 / 6;   */
+  grid-area: 2 / 1 / span 2 / span 3;
+}
+
+.grid-main-container .item1 { grid-area: header; }
+.grid-main-container .item2 { grid-area: menu; }
+.grid-main-container .item3 { grid-area: main; }
+.grid-main-container .item4 { grid-area: right; }
+.grid-main-container .item5 { grid-area: footer; }      
+
+.grid-main-container {
+  display: grid;
+  grid-template-areas:
+    'header header header header header header'
+    'menu main main main right right'
+    'menu footer footer footer footer footer';
+  grid-gap: 10px;
+  background-color: #2196F3;
+  padding: 10px;
+}
+
+.grid-main-container > div {
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  padding: 20px 0;
+  font-size: 30px;
+}
+
+  </style>
+  
+</head>
+<body>
+
+
+<div class="first_design">                            
+	<div class="container-fluid">
+		<h2 class="mt-4 mb-4 font-weight text-center">Grid Elements</h2>                   
+		<div class="row">
+			<div class="col-lg-12 col-12"> 
+				<div class="grid-container">
+				  <div class="grid-item">1</div>
+				  <div class="grid-item">2</div>
+				  <div class="grid-item">3</div>  
+				  <div class="grid-item">4</div>
+				  <div class="grid-item">5</div>
+				  <div class="grid-item">6</div>  
+				  <div class="grid-item">7</div>
+				  <div class="grid-item">8</div>
+				  <div class="grid-item">9</div>  
+				</div>
+
+				<br><br>
+
+				<h2 class="text-center mt-4 mb-4">Display: inline grid</h2> 
+
+				<div class="grid-container inline-grid" style="display: inline-grid;">
+				  <div class="grid-item">1</div>
+				  <div class="grid-item">2</div>
+				  <div class="grid-item">3</div>  
+				  <div class="grid-item">4</div>
+				  <div class="grid-item">5</div>
+				  <div class="grid-item">6</div>  
+				  <div class="grid-item">7</div>
+				  <div class="grid-item">8</div>
+				  <div class="grid-item">9</div>  
+				</div>
+
+				<br><br>
+
+				<h2 class="text-center mt-4 mb-4">CSS Grid Item</h2>
+
+				<div class="grid-item-container">
+				  <div class="item1">1</div>
+				  <div class="item2">2</div>
+				  <div class="item3">3</div>  
+				  <div class="item4">4</div>
+				  <div class="item5">5</div>
+				  <div class="item6">6</div>
+				  <div class="item7">7</div>
+				  <div class="item8">8</div>  
+				  <div class="item9">9</div>
+				  <div class="item10">10</div>
+				  <div class="item11">11</div>
+				  <div class="item12">12</div>
+				  <div class="item13">13</div>
+				  <div class="item14">14</div>
+				  <div class="item15">15</div>
+				</div>
+
+				<br><br>
+
+				<h2 class="text-center mt-4 mb-4">The grid-row Property</h2>
+
+				<div class="grid-row-container"> 
+				  <div class="item1">1</div>
+				  <div class="item2">2</div>
+				  <div class="item3">3</div>  
+				  <div class="item4">4</div>
+				  <div class="item5">5</div>
+				  <div class="item6">6</div>
+				  <div class="item7">7</div>
+				  <div class="item8">8</div>  
+				  <div class="item9">9</div>
+				  <div class="item10">10</div>
+				  <div class="item11">11</div>
+				  <div class="item12">12</div>
+				  <div class="item13">13</div>
+				  <div class="item14">14</div>
+				  <div class="item15">15</div>
+				  <div class="item16">16</div>
+				</div>
+
+				<br><br>
+
+				<h2 class="text-center mt-4 mb-4">The grid-area Property</h2>
+
+				<div class="grid-main-container">             
+				  <div class="item1">Header</div>
+				  <div class="item2">Menu</div>
+				  <div class="item3">Main</div>  
+				  <div class="item4">Right</div>
+				  <div class="item5">Footer</div>
+				</div>
+
+				<div class="mb-5"></div> 
+
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<script src="js/jquery.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script> 
+
+
+</body>
+</html>

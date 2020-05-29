@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Animation</title>    
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">   
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/custom.css">
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <style>
+  	
+  .first_design {
+
+  }
+
+  body {
+  display: grid;
+  place-items: center;
+  height: 100vh; 
+}
+
+@keyframes spin {
+  0% {
+    transform: rotateZ(0);
+  }
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+
+.contents {
+  animation: spin 20s linear infinite; 
+}
+
+.circle {
+  border-radius: 50%;
+  left: calc(50% - 6.25em);
+  top: calc(50% - 12.5em);
+  transform-origin: 50% 12.5em;
+  width: 12.5em;
+  height: 12.5em;
+  position: absolute;
+  box-shadow: 0 1em 2em rgba(0, 0, 0, 0.5);
+}
+
+.one,
+.three {
+  background: rgba(142, 92, 205, 0.75);
+}
+
+.two,
+.four {
+  background: rgba(236, 252, 100, 0.75);
+}
+
+.one {
+  transform: rotateZ(0);
+}
+
+.two {
+  transform: rotateZ(90deg);
+}
+
+.three {
+  transform: rotateZ(180deg);
+}
+
+.four {
+  transform: rotateZ(-90deg);
+}
+
+
+  </style>
+
+  </head>
+
+
+
+  <body>
+
+
+<div class="first_design">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12 col-12">           
+				<div class="contents">                          
+			      <div class="large circle one"></div>
+			      <div class="large circle two"></div>
+			      <div class="large circle three"></div>
+			      <div class="large circle four"></div>
+			    </div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<script src="js/jquery.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+<script>
+	
+// JS just toggles a class
+
+document.onkeydown = KeyDown;
+document.body.classList = "pause";
+
+function KeyDown(event) {
+  var KeyID = event.which;
+  if (KeyID == 39) {
+    document.body.classList.remove("pause");
+  }
+}
+
+document.onkeyup = KeyUp;
+
+function KeyUp(event) {
+  var KeyID = event.which;
+  if (KeyID == 39) {
+    document.body.classList = "pause";
+  }
+}
+
+document.getElementById("autoplay").addEventListener("click", function() {
+  document.body.classList.remove("pause");
+});              
+
+
+// new js line
+
+console.log('hi');          
+
+
+</script>  
+  	
+  </body>
+
+</html>

@@ -1,0 +1,80 @@
+
+/* 2 april 2020 start code css */
+
+header.v-app-bar--is-scrolled {                                                  
+    background-color: #fff !important;  
+}   
+
+.v-application header.v-app-bar--is-scrolled .primary--text {                     
+    color: #000 !important;  
+} 
+
+.v-content > .v-content__wrap  .v-parallax {  
+    z-index: 100000 !important; 
+}
+
+header.theme--light.v-app-bar.v-toolbar.v-sheet { 
+    z-index: 100001 !important;     
+}
+
+.concert-card .container .v-card.v-card--raised { 
+
+}
+
+.concert-card .container .v-card.v-card--hover.v-card--link p {
+    text-align: center;
+    padding-top: 10px;         
+}
+
+.concert-card .container .v-card__subtitle {
+    font-size: 13px;
+}
+
+.concert-card .container .dark--text {
+    font-size: 13px;
+}
+
+.concert-card .v-card__subtitle, .concert-card .v-card__text, .concert-card .v-card__title {
+    padding: 12px;
+}
+
+.concert-card .container .v-card.v-card--hover.v-card--link .v-card__text.dark--text {
+    display: flex;
+}
+
+.concert-card .container .v-card.v-card--hover.v-card--link .v-card__text.dark--text > div:last-child {
+    margin-left: auto;
+}
+
+.concert-card .container .v-card.v-card--hover.v-card--link .v-card__text.dark--text > div:first-child {
+    margin-left: inherit;
+}
+
+.concert-card .concert-card-title {
+    text-align: center;
+}
+
+.v-card>:last-child:not(.v-btn):not(.v-chip) { 
+    border-bottom-left-radius: inherit;
+    border-bottom-right-radius: inherit;
+    width: 100%;
+    object-fit: cover;
+}
+                 
+
+/* 2 april 2020 end code css */    
+
+
+/* 3 april 2020 start code css */
+
+.concert-card .container .concert-card-title {         
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    font-size: 45px;
+    font-weight: 500;
+    margin-bottom: 15px;
+    margin-left: 0
+}
+
+/* 3 april 2020 end code css */                         
