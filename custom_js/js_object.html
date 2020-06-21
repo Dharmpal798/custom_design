@@ -62,53 +62,92 @@
 
 // JavaScript Object Constructors
 
-function son(first, last, age, gender) { 
-	this.firstName = first;
-	this.lastName = last;
-	this.age = age;
-	this.Gender = gender;
-}
+// function son(first, last, age, gender) { 
+// 	this.firstName = first;
+// 	this.lastName = last;
+// 	this.age = age;
+// 	this.Gender = gender;
+// }
 
 // create object
-var myFather = new son("Awadhesh", "Singh", 50, "male");
-var myMother = new son("Sushma", "Singh", 48, "female");
+// var myFather = new son("Awadhesh", "Singh", 50, "male");
+// var myMother = new son("Sushma", "Singh", 48, "female");
 
 // Add a name method to first object
 
-myFather.name = function () {
-	return this.firstName + " " + this.lastName; 
-}
+// myFather.name = function () {
+// 	return this.firstName + " " + this.lastName; 
+// }
 
 // Display age
-document.write("my father name is" + " " + myFather.firstName + " " + "my mother name is" + " " + myMother.firstName);
+// document.write("my father name is" + " " + myFather.firstName + " " + "my mother name is" + " " + myMother.firstName);
 
-document.write("<br> <br>"); 
+// document.write("<br> <br>"); 
 
-document.write(myFather.name()); 
+// document.write(myFather.name()); 
 
-document.write("<br> <br>");
-document.write("<br> <br>");
+// document.write("<br> <br>");
+// document.write("<br> <br>");
 
-function per(first, last, age, gender) { 
-	this.firstName = first;
-	this.lastName = last;
-	this.age = age;
-	this.Gender = gender;
-	this.changeName = function(name) {
-		this.lastName = name;
-	}
-}
+// function per(first, last, age, gender) { 
+// 	this.firstName = first;
+// 	this.lastName = last;
+// 	this.age = age;
+// 	this.Gender = gender;
+// 	this.changeName = function(name) {
+// 		this.lastName = name;
+// 	}
+// }
 
 // create object
-var myFather = new per("Awadhesh", "Singh", 50, "male");
-var myMother = new per("Sushma", "Singh", 48, "female");
+// var myFather = new per("Awadhesh", "Singh", 50, "male");
+// var myMother = new per("Sushma", "Singh", 48, "female");
 
 // myFather changeName is
 
-myMother.changeName("Rajpoot"); 
+// myMother.changeName("Rajpoot"); 
 
-document.write(myMother.firstName + " " + myMother.lastName); 
+// document.write(myMother.firstName + " " + myMother.lastName);
 
+// function emp(id, name, age, profile, salary) {
+//     this.id = id;
+//     this.name = name;
+//     this.age = age;
+//     this.profile = profile;
+//     this.salary = salary;
+// }
+
+// var emp1 = new emp(276, "Dharampal Singh", 26, "UI Developer", 20000.00);
+
+// document.write("Employee id :" + " " + emp1.id + "<br>");
+// document.write("Employee Name :" + " " + emp1.name + "<br>"); 
+// document.write("Employee Age :" + " " + emp1.age + "<br>"); 
+// document.write("Employee Profile :" + " " + emp1.profile + "<br>");
+// document.write("Employee Salary :" + " " + emp1.salary + "<br>");      
+
+/*****************************/
+
+// statements details
+
+// var a = 10;
+// var b = 10; 
+
+// if (a <= b) {
+//    document.write("a is less then b"); 
+// }       
+// else {
+//    document.write("this statement is wrong");             
+// }  
+
+// for (i=0; i<10; i++) { 
+//     if(i==5) { 
+//       document.write(i); 
+//       break;  
+//     }
+
+//     document.write(i + "<br />");
+// }
+           
 </script> 
 
 </body>
@@ -133,4 +172,4 @@ zumenPurchase
 
 1). Working on Home page redesign. (4 hours). 
 
-2). Working on Pricing page changes text and images. (2 hours).  -->
+2). Working on Pricing page changes text and images. (2 hours).  --> 
